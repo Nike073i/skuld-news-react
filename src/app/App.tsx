@@ -2,14 +2,18 @@ import { useTheme } from "./providers/ThemeProvider";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "./providers/router";
 import { Navbar } from "widgets/Navbar";
+import { Sidebar } from "shared/ui/Sidebar";
 
 function App() {
     const { theme } = useTheme()
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar />
-            <AppRouter />
-        </div>
+            <div className="content-page">
+                <Sidebar />
+                <AppRouter />
+            </div>
+        </div >
     )
 }
 

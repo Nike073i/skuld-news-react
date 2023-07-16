@@ -26,8 +26,19 @@ export default function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRu
             "sass-loader"
         ],
     }
+    const svgLoader = {
+        test: /\.svg$/i,
+        loader: '@svgr/webpack'
+    }
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader'
+    }
     return [
         typescriptLoader,
-        cssLoader
+        cssLoader,
+        svgLoader,
+        fileLoader
     ]
 }

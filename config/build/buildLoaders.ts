@@ -47,8 +47,8 @@ export default function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRu
         },
     };
     return [
-        typescriptLoader,
         babelLoader,
+        typescriptLoader,
         cssLoader,
         svgLoader,
         fileLoader,

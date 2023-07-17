@@ -4,5 +4,6 @@
   "MainLink": "Main",
   "AboutLink": "About site",
   "Loading": "Loading",
-  "NotFoundPage": "Page not found"
+  "NotFoundPage": "Page not found",
+  "SomethingError": "Something went wrong"
 }

@@ -4,5 +4,6 @@
   "MainLink": "Главная",
   "AboutLink": "О сайте",
   "Loading": "Загрузка",
-  "NotFoundPage": "Страница не найдена"
+  "NotFoundPage": "Страница не найдена",
+  "SomethingError": "Произошла непредвиденная ошибка"
 }

@@ -1,3 +1,7 @@
 {
-    "Language": "Русский"
+  "Language": "Русский",
+  "ExpandButton": "Раскрыть",
+  "MainLink": "Главная",
+  "AboutLink": "О сайте",
+  "Loading": "Загрузка"
 }

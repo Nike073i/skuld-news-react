@@ -35,8 +35,20 @@ export default function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRu
         test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
     };
+
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env'],
+            },
+        },
+    };
     return [
         typescriptLoader,
+        babelLoader,
         cssLoader,
         svgLoader,
         fileLoader,

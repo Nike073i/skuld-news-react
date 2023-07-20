@@ -1,0 +1,90 @@
+{
+	"Create component": {
+		"prefix": "mrc",
+		"scope": "typescript, typescriptreact",
+		"body": [
+			"import { classNames } from 'shared/lib/classNames/classNames';",
+			"import cls from './${TM_FILENAME_BASE}.module.scss';",
+			"",
+			"interface ${TM_FILENAME_BASE}Props {",
+			"    className?: string;",
+			"}",
+			"",
+			"export const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props) => {",
+			"    const {",
+			"        className,",
+			"    } = props;",
+			"    const mods = {};",
+			"    return (",
+			"        <div className={classNames(cls.${TM_FILENAME_BASE/(.*)/${1:/camelcase}/}, mods, [className])}>",
+			"            $1",
+			"        </div>",
+			"    );",
+			"};",
+			"",
+		],
+		"description": "Create a new react-component"
+	},
+	"Create tests": {
+		"prefix": "mrct",
+		"scope": "typescript, typescriptreact",
+		"body": [
+			"import { render, screen } from '@testing-library/react';",
+			"import { ${TM_FILENAME_BASE/(\\..*$)//} } from './${TM_FILENAME_BASE/(\\..*$)//}';",
+			"",
+			"describe('${TM_FILENAME_BASE/(\\..*$)//}', () => {",
+			"    test('Test render', () => {",
+			"        render(<${TM_FILENAME_BASE/(\\..*$)//}>content</${TM_FILENAME_BASE/(\\..*$)//}>);",
+			"        expect(screen.getByText('content')).toBeInTheDocument();",
+			"    });",
+			"});",
+			"",
+		],
+		"description": "Create a react-component tests"
+	},
+	"Create scss": {
+		"prefix": "mrcs",
+		"scope": "scss",
+		"body": [
+			".${TM_FILENAME_BASE/(\\..*$)|(^[^\\.]*)/${2:/camelcase}/gm} {",
+			"    $1: $2;",
+			"}",
+			"",
+		],
+		"description": "Create a react-component styles"
+	},
+	"Create stories": {
+		"prefix": "mrcst",
+		"scope": "typescript, typescriptreact",
+		"body": [
+			"import type { Meta, StoryObj } from '@storybook/react';",
+			"import { ${TM_FILENAME_BASE/(\\..*$)//} } from './${TM_FILENAME_BASE/(\\..*$)//}';",
+			"",
+			"const meta = {",
+			"    title: '$1/${TM_FILENAME_BASE/(\\..*$)//}',",
+			"    component: ${TM_FILENAME_BASE/(\\..*$)//},",
+			"} satisfies Meta<typeof ${TM_FILENAME_BASE/(\\..*$)//}>;",
+			"",
+			"export default meta;",
+			"type Story = StoryObj<typeof meta>;",
+			"",
+			"export const $2: Story = {",
+			"    args: {",
+			"        $3: $4,",
+			"    },",
+			"};",
+			"",
+			"$0"
+		]
+	},
+	"Export module": {
+		"prefix": "exm",
+		"scope": "typescript",
+		"body": [
+			"export {",
+			"    $1,",
+			"};",
+			"",
+		],
+	}
+}

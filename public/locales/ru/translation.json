@@ -6,5 +6,6 @@
   "Loading": "Загрузка",
   "NotFoundPage": "Страница не найдена",
   "SomethingError": "Произошла непредвиденная ошибка",
-  "AbrLanguage" : "Рус"
+  "AbrLanguage": "Рус",
+  "LogIn": "Войти"
 }

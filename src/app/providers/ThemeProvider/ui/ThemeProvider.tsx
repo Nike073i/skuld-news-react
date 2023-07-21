@@ -1,16 +1,20 @@
 import React, { useMemo, useState } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContext';
 
+interface ThemeProviderProps {
+    initialTheme?: Theme;
+}
+
 const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.LIGHT;
 
-function ThemeProvider({ children }: React.PropsWithChildren<{}>) {
-    const [theme, setTheme] = useState<Theme>(defaultTheme);
-    const toggleTheme = () => {
-        setTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK);
-    };
+function ThemeProvider(props: React.PropsWithChildren<ThemeProviderProps>) {
+    const {
+        initialTheme,
+        children,
+    } = props;
+    const [theme] = useState<Theme>(initialTheme || defaultTheme);
     const defaultProps = useMemo(() => ({
         theme,
-        setTheme: toggleTheme,
     }), [theme]);
     return (
         <ThemeContext.Provider value={defaultProps}>

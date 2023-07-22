@@ -12,11 +12,12 @@ function ThemeProvider(props: React.PropsWithChildren<ThemeProviderProps>) {
         initialTheme,
         children,
     } = props;
-    const [theme] = useState<Theme>(initialTheme || defaultTheme);
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
     const defaultProps = useMemo(() => ({
         theme,
+        setTheme,
     }), [theme]);
-    document.body.classList.add(theme);
+    document.body.className = theme;
     return (
         <ThemeContext.Provider value={defaultProps}>
             {children}

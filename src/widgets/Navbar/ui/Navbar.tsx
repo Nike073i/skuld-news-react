@@ -6,10 +6,15 @@ import { Modal } from 'shared/ui/Modal';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
-    className?: string
+    className?: string;
+    portal?: HTMLElement;
 }
 
-export function Navbar({ className }: NavbarProps) {
+export function Navbar(props : NavbarProps) {
+    const {
+        className,
+        portal = document.getElementById('app'),
+    } = props;
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const onToggleModal = useCallback(() => {
@@ -27,7 +32,7 @@ export function Navbar({ className }: NavbarProps) {
             <Modal
                 isOpen={isAuthModal}
                 onClose={onToggleModal}
-                portal={document.getElementById('app')}
+                portal={portal}
             >
                 *
             </Modal>

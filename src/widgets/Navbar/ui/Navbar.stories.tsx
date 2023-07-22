@@ -6,18 +6,17 @@ import { Navbar } from './Navbar';
 const meta = {
     title: 'widgets/Navbar',
     component: Navbar,
+    args: {
+        portal: document.body,
+    },
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    args: {
-    },
 };
 
 export const Dark: Story = {
-    args: {
-    },
     decorators: [ThemeDecorator(Theme.DARK)],
 };

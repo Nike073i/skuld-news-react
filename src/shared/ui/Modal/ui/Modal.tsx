@@ -20,7 +20,7 @@ export const Modal = (props: ModalProps) => {
         children,
         isOpen,
         onClose,
-        portal,
+        portal = document.getElementById('app') ?? document.body,
     } = props;
 
     const { theme } = useTheme();
@@ -64,14 +64,15 @@ export const Modal = (props: ModalProps) => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
-    const modal = (
-        <div className={classNames(cls.modal, mods, [className, theme])}>
-            <div className={cls.overlay} onClick={closeHandler}>
-                <div className={cls.content} onClick={onContentClick}>
-                    {children}
+    return (
+        <Portal element={portal}>
+            <div className={classNames(cls.modal, mods, [className, theme])}>
+                <div className={cls.overlay} onClick={closeHandler}>
+                    <div className={cls.content} onClick={onContentClick}>
+                        {children}
+                    </div>
                 </div>
             </div>
-        </div>
+        </Portal>
     );
-    return portal ? (<Portal element={portal}>{modal}</Portal>) : modal;
 };

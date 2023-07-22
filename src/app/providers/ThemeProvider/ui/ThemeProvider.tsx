@@ -16,6 +16,7 @@ function ThemeProvider(props: React.PropsWithChildren<ThemeProviderProps>) {
     const defaultProps = useMemo(() => ({
         theme,
     }), [theme]);
+    document.body.classList.add(theme);
     return (
         <ThemeContext.Provider value={defaultProps}>
             {children}

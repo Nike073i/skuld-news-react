@@ -3,13 +3,10 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'shared/ui/Sidebar';
 import { Suspense } from 'react';
 import { AppRouter } from './providers/router';
-import { useTheme } from './providers/ThemeProvider';
 
 function App() {
-    const { theme } = useTheme();
-
     return (
-        <div id="app" className={classNames('app', {}, [theme])}>
+        <div id="app" className={classNames('app')}>
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">

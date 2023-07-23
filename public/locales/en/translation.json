@@ -7,5 +7,7 @@
   "NotFoundPage": "Page not found",
   "SomethingError": "Something went wrong",
   "AbrLanguage": "EN",
-  "LogIn": "Log in"
+  "LogIn": "Log in",
+  "InputUsername": "Input username",
+  "InputPassword": "Input password"
 }

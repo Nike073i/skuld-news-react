@@ -12,6 +12,7 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
     portal?: HTMLElement;
+    lazy?: boolean;
 }
 
 export const Modal = (props: ModalProps) => {
@@ -21,6 +22,7 @@ export const Modal = (props: ModalProps) => {
         isOpen,
         onClose,
         portal = document.getElementById('app') ?? document.body,
+        lazy,
     } = props;
 
     const { theme } = useTheme();
@@ -28,6 +30,7 @@ export const Modal = (props: ModalProps) => {
     const ANIMATION_DELAY = 300;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = useCallback(() => {
@@ -52,6 +55,11 @@ export const Modal = (props: ModalProps) => {
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeydown);
         }
         return () => {
@@ -64,6 +72,9 @@ export const Modal = (props: ModalProps) => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+    if (lazy && !isMounted) {
+        return null;
+    }
     return (
         <Portal element={portal}>
             <div className={classNames(cls.modal, mods, [className, theme])}>

@@ -7,5 +7,7 @@
   "NotFoundPage": "Страница не найдена",
   "SomethingError": "Произошла непредвиденная ошибка",
   "AbrLanguage": "Рус",
-  "LogIn": "Войти"
+  "LogIn": "Войти",
+  "InputUsername": "Введите логин",
+  "InputPassword": "Введите пароль"
 }

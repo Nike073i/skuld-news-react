@@ -9,5 +9,8 @@
   "AbrLanguage": "Рус",
   "LogIn": "Войти",
   "InputUsername": "Введите логин",
-  "InputPassword": "Введите пароль"
+  "InputPassword": "Введите пароль",
+  "AuthFormTitle": "Форма авторизации",
+  "AuthorizationError": "Вы ввели неверный логин или пароль",
+  "LogOut": "Выйти"
 }

@@ -9,5 +9,8 @@
   "AbrLanguage": "EN",
   "LogIn": "Log in",
   "InputUsername": "Input username",
-  "InputPassword": "Input password"
+  "InputPassword": "Input password",
+  "AuthFormTitle": "Authorization form",
+  "AuthorizationError": "You entered an incorrect username or password",
+  "LogOut": "Logout"
 }

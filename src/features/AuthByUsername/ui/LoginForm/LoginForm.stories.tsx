@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { LoginForm } from './LoginForm';
 
 const meta = {
@@ -11,9 +12,18 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Lign: Story = {
+export const Light: Story = {
+    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password' } })],
 };
 
 export const Dark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password' } }), ThemeDecorator(Theme.DARK)],
+};
+
+export const withErrorLight: Story = {
+    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password', error: 'Some error' } })],
+};
+
+export const loadingLight: Story = {
+    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password', isLoading: true } })],
 };

@@ -8,21 +8,18 @@ import { SidebarItemType } from '../../model/items';
 interface SidebarItemProps {
     item: SidebarItemType;
     collapsed: boolean;
-    key: string;
 }
 
 export const SidebarItem = memo((props: SidebarItemProps) => {
     const {
         item,
         collapsed,
-        key,
     } = props;
     const { t } = useTranslation();
     return (
         <AppLink
             to={item.path}
             theme={AppLinkTheme.SECONDARY}
-            key={key}
             className={classNames(cls.item, { [cls.collapsed]: collapsed }, [])}
         >
             <item.Icon className={cls.icon} />

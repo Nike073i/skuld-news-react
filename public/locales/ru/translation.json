@@ -12,5 +12,6 @@
   "InputPassword": "Введите пароль",
   "AuthFormTitle": "Форма авторизации",
   "AuthorizationError": "Вы ввели неверный логин или пароль",
-  "LogOut": "Выйти"
+  "LogOut": "Выйти",
+  "ProfileLink": "Профиль"
 }

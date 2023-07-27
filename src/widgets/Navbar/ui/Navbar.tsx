@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
@@ -12,7 +12,7 @@ interface NavbarProps {
     portal?: HTMLElement;
 }
 
-export function Navbar(props: NavbarProps) {
+export const Navbar = memo((props: NavbarProps) => {
     const {
         className,
         portal = document.getElementById('app'),
@@ -63,4 +63,4 @@ export function Navbar(props: NavbarProps) {
             )}
         </div>
     );
-}
+});

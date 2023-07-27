@@ -12,5 +12,6 @@
   "InputPassword": "Input password",
   "AuthFormTitle": "Authorization form",
   "AuthorizationError": "You entered an incorrect username or password",
-  "LogOut": "Logout"
+  "LogOut": "Logout",
+  "ProfileLink": "Profile"
 }

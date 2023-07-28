@@ -9,14 +9,13 @@ import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
-    portal?: HTMLElement;
 }
 
 export const Navbar = memo((props: NavbarProps) => {
     const {
         className,
-        portal = document.getElementById('app'),
     } = props;
+    const portal = document.getElementById('app') || document.body;
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);

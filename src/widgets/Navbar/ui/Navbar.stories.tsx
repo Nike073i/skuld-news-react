@@ -7,9 +7,6 @@ import { Navbar } from './Navbar';
 const meta = {
     title: 'widgets/Navbar',
     component: Navbar,
-    args: {
-        portal: document.body,
-    },
     decorators: [StoreDecorator({})],
 } satisfies Meta<typeof Navbar>;
 

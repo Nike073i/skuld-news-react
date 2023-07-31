@@ -13,5 +13,7 @@
   "AuthFormTitle": "Authorization form",
   "AuthorizationError": "You entered an incorrect username or password",
   "LogOut": "Logout",
-  "ProfileLink": "Profile"
+  "ProfileLink": "Profile",
+  "Currency": "Currency",
+  "Country": "Country"
 }

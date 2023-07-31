@@ -2,5 +2,13 @@
   "ProfileTitle": "Профиль",
   "EditProfile": "Редактировать",
   "FirstName": "Имя",
-  "LastName": "Фамилия"
+  "LastName": "Фамилия",
+  "ErrorLoadProfile": "Произошла ошибка при загрузке данных профиля",
+  "ErrorFixReload": "Попробуйте обновить страницу",
+  "Cancel": "Отменить",
+  "Save": "Сохранить",
+  "City": "Город",
+  "Age": "Возраст",
+  "Username": "Имя пользователя",
+  "Avatar": "Аватар"
 }

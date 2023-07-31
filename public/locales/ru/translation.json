@@ -13,5 +13,7 @@
   "AuthFormTitle": "Форма авторизации",
   "AuthorizationError": "Вы ввели неверный логин или пароль",
   "LogOut": "Выйти",
-  "ProfileLink": "Профиль"
+  "ProfileLink": "Профиль",
+  "Currency": "Валюта",
+  "Country": "Страна"
 }

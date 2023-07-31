@@ -2,5 +2,13 @@
   "ProfileTitle": "Profile",
   "EditProfile": "Edit",
   "FirstName": "First name",
-  "LastName": "Last name"
+  "LastName": "Last name",
+  "ErrorLoadProfile": "An error occurred while loading profile data",
+  "ErrorFixReload": "Try reloading the page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Age": "Age",
+  "City": "City",
+  "Username": "Username",
+  "Avatar": "Avatar"
 }

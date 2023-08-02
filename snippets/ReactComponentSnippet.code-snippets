@@ -3,6 +3,7 @@
 		"prefix": "mrc",
 		"scope": "typescript, typescriptreact",
 		"body": [
+			"import { memo } from 'react';",
 			"import { classNames } from 'shared/lib/classNames/classNames';",
 			"import cls from './${TM_FILENAME_BASE}.module.scss';",
 			"",
@@ -10,7 +11,7 @@
 			"    className?: string;",
 			"}",
 			"",
-			"export const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props) => {",
+			"export const ${TM_FILENAME_BASE} = memo((props: ${TM_FILENAME_BASE}Props) => {",
 			"    const {",
 			"        className,",
 			"    } = props;",
@@ -20,7 +21,7 @@
 			"            $1",
 			"        </div>",
 			"    );",
-			"};",
+			"});",
 			"",
 		],
 		"description": "Create a new react-component"

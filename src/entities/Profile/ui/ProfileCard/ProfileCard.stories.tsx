@@ -7,7 +7,7 @@ import avatar from 'shared/assets/tests/avatarExample.jpg';
 import { ProfileCard } from './ProfileCard';
 
 const meta = {
-    title: 'entites/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     args: {
         data: {

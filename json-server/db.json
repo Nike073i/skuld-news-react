@@ -101,7 +101,7 @@
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     }
   ],
   "users": [
@@ -114,20 +114,34 @@
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "ivanov",
       "password": "123",
       "role": "USER",
-      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+      "avatar": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"
     }
   ],
-  "profile": {
-    "first": "Никита",
-    "lastname": "Филиппов",
-    "age": 21,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Ulyanovsk",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
-  }
+  "profiles": [
+    {
+      "id": "1",
+      "first": "Никита",
+      "lastname": "Филиппов",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Ulyanovsk",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Иванasdsa",
+      "lastname": "Иванов",
+      "age": 12,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "ivanov",
+      "avatar": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"
+    }
+  ]
 }

@@ -9,6 +9,7 @@ import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticlePageSchema } from 'pages/ArticlePage';
 import { NavigateFunction } from 'react-router-dom';
 
 export interface StateSchema {
@@ -18,6 +19,7 @@ export interface StateSchema {
     // async reducurs
     loginSchema?: LoginSchema;
     profileSchema?: ProfileSchema;
+    articlePageSchema?: ArticlePageSchema;
     articleDetailsSchema?: ArticleDetailsSchema;
     articleDetailsCommentsSchema?: ArticleDetailsCommentsSchema;
     addCommentSchema?: AddCommentSchema;

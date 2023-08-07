@@ -7,6 +7,7 @@ import { ArticleDetails } from './ArticleDetails';
 
 const articleData = {
     id: '1',
+    user: { id: '1', username: 'ivanov', avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg' },
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
@@ -76,7 +77,7 @@ const articleData = {
 };
 
 const meta = {
-    title: '/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     args: {
         articleId: '',

@@ -1,5 +1,7 @@
 {
   "ArticleNotFound": "Article not found",
   "ErrorLoadArticle": "An error occurred while loading article data",
-  "Comments": "Comments"
+  "Comments": "Comments",
+  "ContinueReading": "Continue reading...",
+  "BackToList": "Back to list"
 }

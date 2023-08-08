@@ -102,12 +102,14 @@ export const ListDark: Story = {
 
 export const ListIsLoading: Story = {
     args: {
+        articles: [article],
         isLoading: true,
     },
 };
 
 export const ListIsLoadingDark: Story = {
     args: {
+        articles: [article],
         isLoading: true,
     },
     decorators: [ThemeDecorator(Theme.DARK)],
@@ -128,6 +130,7 @@ export const TileDark: Story = {
 
 export const TileIsLoading: Story = {
     args: {
+        articles: [article],
         view: ArticleView.TILE,
         isLoading: true,
     },
@@ -135,6 +138,7 @@ export const TileIsLoading: Story = {
 
 export const TileIsLoadingDark: Story = {
     args: {
+        articles: [article],
         view: ArticleView.TILE,
         isLoading: true,
     },

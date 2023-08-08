@@ -10,7 +10,6 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlePage';
-import { NavigateFunction } from 'react-router-dom';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -40,7 +39,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?: NavigateFunction,
 }
 
 export interface ThunkConfig<T> {

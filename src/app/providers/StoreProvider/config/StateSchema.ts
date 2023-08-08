@@ -10,10 +10,12 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlePage';
+import { PageScrollSchema } from 'widgets/Page';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    pageScrollSchema: PageScrollSchema;
 
     // async reducurs
     loginSchema?: LoginSchema;

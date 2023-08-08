@@ -12,7 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitalEffect/useInitialEff
 import { AddCommentForm } from 'features/addComment';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'app/providers/router';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';

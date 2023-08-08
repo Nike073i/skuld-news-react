@@ -14,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitalEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -67,7 +68,7 @@ function ProfilePage() {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div>
+            <Page>
                 <ProfilePageHeader />
                 {validationErrors?.length && validationErrors.map(
                     (err) => (
@@ -92,7 +93,7 @@ function ProfilePage() {
                     onChangeCountry={onChangeCountry}
                     readOnly={readonly}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 }

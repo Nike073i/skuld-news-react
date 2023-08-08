@@ -12,6 +12,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitalEffect/useInitialEff
 import { AddCommentForm } from 'features/addComment';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'app/providers/router';
+import { Page } from 'shared/ui/Page/Page';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -62,15 +63,15 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
     if (!articleId) {
         return (
-            <div className={classNames(cls.articleDetailsPage, mods, [className])}>
+            <Page className={classNames(cls.articleDetailsPage, mods, [className])}>
                 {t('ArticleNotFound')}
-            </div>
+            </Page>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.articleDetailsPage, mods, [className])}>
+            <Page className={classNames(cls.articleDetailsPage, mods, [className])}>
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('BackToList')}</Button>
                 <ArticleDetails articleId={articleId} />
                 <Text className={cls.commentTitle} title={t('Comments')} />
@@ -79,7 +80,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

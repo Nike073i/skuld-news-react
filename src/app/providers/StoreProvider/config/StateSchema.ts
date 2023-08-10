@@ -8,7 +8,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentSchema } from 'features/addComment';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlePage';
 import { PageScrollSchema } from 'widgets/Page';
 
@@ -22,7 +22,7 @@ export interface StateSchema {
     profileSchema?: ProfileSchema;
     articlePageSchema?: ArticlePageSchema;
     articleDetailsSchema?: ArticleDetailsSchema;
-    articleDetailsCommentsSchema?: ArticleDetailsCommentsSchema;
+    articleDetailsPageSchema?: ArticleDetailsPageSchema;
     addCommentSchema?: AddCommentSchema;
 }
 

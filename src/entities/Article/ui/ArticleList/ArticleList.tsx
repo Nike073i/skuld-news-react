@@ -1,5 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { useTranslation } from 'react-i18next';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -25,10 +27,20 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.LIST,
     } = props;
     const mods = {};
+    const { t } = useTranslation('article');
 
     const renderArticle = (article: Article) => (
         <ArticleListItem article={article} view={view} className={cls.card} key={article.id} />
     );
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames('', mods, [className, cls[view]])}>
+                <Text size={TextSize.L} title={t('NotFound')} />
+            </div>
+        );
+    }
+
     return (
         <div className={classNames('', mods, [className, cls[view]])}>
             {articles.length > 0

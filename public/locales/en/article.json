@@ -3,5 +3,18 @@
   "ErrorLoadArticle": "An error occurred while loading article data",
   "Comments": "Comments",
   "ContinueReading": "Continue reading...",
-  "BackToList": "Back to list"
+  "BackToList": "Back to list",
+  "SortBy": "Sort by",
+  "Search": "Search",
+  "Ascending": "Ascending",
+  "Descending": "Descending",
+  "CreationDate": "Creation date",
+  "Title": "Title",
+  "Views": "Views",
+  "By": "by",
+  "All": "All",
+  "IT": "IT",
+  "Economics": "Economics",
+  "Science": "Science",
+  "NotFound": "Articles not found"
 }

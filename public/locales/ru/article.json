@@ -3,5 +3,18 @@
   "ErrorLoadArticle": "Произошла ошибка при загрузке данных статьи",
   "Comments": "Комментарии",
   "ContinueReading": "Читать далее...",
-  "BackToList": "Обратно к списку"
+  "BackToList": "Обратно к списку",
+  "SortBy": "Сортировать по",
+  "Search": "Поиск",
+  "Ascending": "Возрастанию",
+  "Descending": "Убыванию",
+  "CreationDate": "Дате создания",
+  "Views": "Просмотрам",
+  "Title": "Названию",
+  "By": "по",
+  "All": "Все",
+  "IT": "Aйти",
+  "Economics": "Экономика",
+  "Science": "Наука",
+  "NotFound": "Статьи не найдены"
 }

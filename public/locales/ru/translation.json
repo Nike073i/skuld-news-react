@@ -16,5 +16,7 @@
   "ProfileLink": "Профиль",
   "Currency": "Валюта",
   "Country": "Страна",
-  "ArticleLink" : "Статьи"
+  "ArticleLink": "Статьи",
+  "LogoText": "Skuld",
+  "CreateArticle": "Создать статью"
 }

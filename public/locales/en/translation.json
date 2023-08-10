@@ -16,5 +16,7 @@
   "ProfileLink": "Profile",
   "Currency": "Currency",
   "Country": "Country",
-  "ArticleLink" : "Articles"
+  "ArticleLink": "Articles",
+  "LogoText": "Skuld",
+  "CreateArticle": "Create article"
 }

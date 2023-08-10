@@ -30,6 +30,7 @@ import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slice';
+import { ArticelDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticelDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -51,7 +52,6 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationsIsLoading);
     const { articleId } = useParams<{ articleId: string }>();
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(articleId));
@@ -61,10 +61,6 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
-
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     if (!articleId) {
         return (
@@ -77,7 +73,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.articleDetailsPage, mods, [className])}>
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('BackToList')}</Button>
+                <ArticelDetailsPageHeader />
                 <ArticleDetails articleId={articleId} />
                 <Text
                     size={TextSize.L}

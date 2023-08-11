@@ -9,6 +9,7 @@ import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
 import { useInitialEffect } from 'shared/lib/hooks/useInitalEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { PAGE_ID } from 'shared/consts/documentIds';
 import { getPageScrollByPath } from '../ScrollSave/model/selectors/getPageScrollByPath/getPageScrollByPath';
 import { pageScrollActions } from '../ScrollSave/model/slices/pageScrollSlice';
 import cls from './Page.module.scss';
@@ -52,6 +53,7 @@ export const Page: FC<PropsWithChildren<PageProps>> = (props: PropsWithChildren<
             ref={containerRef}
             className={classNames(cls.pageWrapper, mods, [className])}
             onScroll={onScroll}
+            id={PAGE_ID}
         >
             {children}
             {onScrollEnd && <div ref={triggerRef} className={cls.trigger} />}

@@ -47,6 +47,7 @@
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-virtualized": "^9.21.22",
     "@types/webpack": "^5.28.1",
     "@types/webpack-bundle-analyzer": "^4.6.0",
     "@types/webpack-dev-server": "^4.7.2",
@@ -98,7 +99,8 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.0.2",
     "react-redux": "^8.1.1",
-    "react-router-dom": "^6.14.1"
+    "react-router-dom": "^6.14.1",
+    "react-virtualized": "^9.22.5"
   },
   "loki": {
     "configurations": {

@@ -11,14 +11,6 @@ const router = jsonServer.router(dataFilePath);
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
-// Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
-server.use(async (req, res, next) => {
-    await new Promise((res) => {
-        setTimeout(res, 800);
-    });
-    next();
-});
-
 // Эндпоинт для логина
 server.post('/login', (req, res) => {
     try {

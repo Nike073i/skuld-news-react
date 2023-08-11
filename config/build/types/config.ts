@@ -1,10 +1,12 @@
 export type BuildMode = 'production' | 'development'
 
 export interface BuildPaths {
-    entry: string,
-    build: string,
-    html: string,
-    src: string
+    entry: string;
+    build: string;
+    html: string;
+    src: string;
+    locales: string;
+    buildLocales: string;
 }
 
 export type ProjectType = 'storybook' | 'frontend' | 'jest';

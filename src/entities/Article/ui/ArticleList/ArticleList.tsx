@@ -77,7 +77,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     return (
         <WindowScroller
-            scrollElement={document.getElementById(PAGE_ID) as Element}
+            scrollElement={document.getElementById(PAGE_ID) as Element ?? document.body}
         >
             {({
                 height,
@@ -92,11 +92,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     className={classNames(cls.ArticleList, mods, [className, cls[view]])}
                 >
                     <List
-                        height={height ?? 700}
+                        height={height}
                         rowCount={rowCount}
                         rowHeight={isBig ? 700 : 330}
                         rowRenderer={rowRender}
-                        width={width ? width - 80 : 700}
+                        width={width - 80}
                         autoHeight
                         onScroll={onChildScroll}
                         isScrolling={isScrolling}

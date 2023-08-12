@@ -1,0 +1,41 @@
+.flex {
+    display: flex;
+}
+
+.max {
+    width: 100%;
+}
+
+@each $className,
+    $justifyValue in (justifyStart: start,
+    justifyCenter: center,
+    justifyEnd: end,
+    justifyBetween: space-between,
+    justifyAround: space-around) {
+    .#{$className} {
+        justify-content: $justifyValue;
+    }
+}
+
+@each $className,
+    $alignValue in (alignStart: start,
+    alignCenter: center,
+    alignEnd: end) {
+    .#{$className} {
+        align-items: $alignValue;
+    }
+}
+
+@each $className,
+    $directionValue in (directionRow: row,
+    directionColumn: column) {
+    .#{$className} {
+        flex-direction: $directionValue;
+    }
+}
+
+@each $indent in (4, 8, 16, 32) {
+    .gap#{$indent} {
+        gap: #{$indent}px;
+    }
+}

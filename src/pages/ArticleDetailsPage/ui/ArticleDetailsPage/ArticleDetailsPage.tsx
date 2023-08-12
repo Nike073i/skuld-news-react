@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { CommentList } from 'entities/Comment';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
@@ -10,9 +10,8 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitalEffect/useInitialEffect';
 import { AddCommentForm } from 'features/addComment';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePath } from 'app/providers/router';
 import { Page } from 'widgets/Page';
+import { VStack } from 'shared/ui/Stack';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -73,26 +72,28 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.articleDetailsPage, mods, [className])}>
-                <ArticelDetailsPageHeader />
-                <ArticleDetails articleId={articleId} />
-                <Text
-                    size={TextSize.L}
-                    className={cls.recommendationsTitle}
-                    title={t('Recommendations')}
-                />
-                <ArticleList
-                    view={ArticleView.TILE}
-                    articles={recommendations}
-                    isLoading={recommendationsIsLoading}
-                    target="_blank"
-                />
-                <Text
-                    size={TextSize.L}
-                    className={cls.commentTitle}
-                    title={t('Comments')}
-                />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList isLoading={commentsIsLoading} comments={comments} />
+                <VStack gap="16" max>
+                    <ArticelDetailsPageHeader />
+                    <ArticleDetails articleId={articleId} />
+                    <Text
+                        size={TextSize.L}
+                        className={cls.recommendationsTitle}
+                        title={t('Recommendations')}
+                    />
+                    <ArticleList
+                        view={ArticleView.TILE}
+                        articles={recommendations}
+                        isLoading={recommendationsIsLoading}
+                        target="_blank"
+                    />
+                    <Text
+                        size={TextSize.L}
+                        className={cls.commentTitle}
+                        title={t('Comments')}
+                    />
+                    <AddCommentForm onSendComment={onSendComment} />
+                    <CommentList isLoading={commentsIsLoading} comments={comments} />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

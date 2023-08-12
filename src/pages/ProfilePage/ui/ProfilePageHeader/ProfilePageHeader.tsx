@@ -9,7 +9,7 @@ import {
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -37,40 +37,37 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch]);
     const mods = {};
     return (
-        <div className={classNames(cls.profilePageHeader, mods, [className])}>
+        <HStack max justify="between" className={classNames('', mods, [className])}>
             <Text title={t('ProfileTitle')} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <div>
                     {readonly
                         ? (
                             <Button
                                 theme={ButtonTheme.OUTLINE}
-                                className={cls.editBtn}
                                 onClick={onEdit}
                             >
                                 {t('EditProfile')}
                             </Button>
                         )
                         : (
-                            <>
+                            <HStack gap="8">
                                 <Button
                                     theme={ButtonTheme.OUTLINE_DANGER}
-                                    className={cls.editBtn}
                                     onClick={onCancelEdit}
                                 >
                                     {t('Cancel')}
                                 </Button>
                                 <Button
                                     theme={ButtonTheme.OUTLINE}
-                                    className={cls.saveBtn}
                                     onClick={onSave}
                                 >
                                     {t('Save')}
                                 </Button>
-                            </>
+                            </HStack>
                         )}
                 </div>
             )}
-        </div>
+        </HStack>
     );
 };

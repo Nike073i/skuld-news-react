@@ -20,6 +20,8 @@ const config: StorybookConfig = {
             html: '',
             src: path.resolve(__dirname, '..', '..', 'src'),
             entry: '',
+            locales: path.resolve(__dirname, '..', '..', 'public', 'locales'),
+            buildLocales: path.resolve(__dirname, '..', '..', 'build', 'locales'),
         };
         config!.resolve!.modules!.push(paths.src);
         config!.resolve!.extensions!.push('.ts', '.tsx');

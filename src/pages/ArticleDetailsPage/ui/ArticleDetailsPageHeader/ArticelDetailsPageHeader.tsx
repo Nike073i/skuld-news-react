@@ -6,7 +6,7 @@ import { RoutePath } from 'app/providers/router';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from 'entities/Article';
-import cls from './ArticelDetailsPageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/getCanEditArticle/getCanEditArticle';
 
 interface ArticelDetailsPageHeaderProps {
@@ -29,17 +29,16 @@ export const ArticelDetailsPageHeader = memo((props: ArticelDetailsPageHeaderPro
         navigate(`${RoutePath.article}${article?.id}/edit`);
     }, [article?.id, navigate]);
     return (
-        <div className={classNames(cls.articelDetailsPageHeader, mods, [className])}>
+        <HStack max justify="between" className={classNames('', mods, [className])}>
             <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('BackToList')}</Button>
             {canEditArticle && (
                 <Button
-                    className={cls.editBtn}
                     theme={ButtonTheme.OUTLINE}
                     onClick={onEditArticle}
                 >
                     {t('Edit')}
                 </Button>
             )}
-        </div>
+        </HStack>
     );
 });

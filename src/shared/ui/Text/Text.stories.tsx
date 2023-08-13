@@ -61,14 +61,20 @@ export const ErrorDark: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const SizeL: Story = {
+export const SizeS: Story = {
     args: {
-        size: TextSize.L,
+        size: TextSize.S,
     },
 };
 
 export const SizeM: Story = {
     args: {
         size: TextSize.M,
+    },
+};
+
+export const SizeL: Story = {
+    args: {
+        size: TextSize.L,
     },
 };

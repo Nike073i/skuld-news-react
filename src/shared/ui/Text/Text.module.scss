@@ -22,7 +22,7 @@
     }
 
     .text {
-        color:  var(--inverted-secondary-color);
+        color: var(--inverted-secondary-color);
     }
 }
 
@@ -38,22 +38,14 @@
     text-align: center;
 }
 
-.size_m {
-    .title {
-        font: var(--font-l);
-    }
+@each $text_size, $title_size in (s: m, m: l, l: xl) {
+    .size_#{$text_size} {
+        .text {
+            font: var(--font-#{$text_size})
+        }
 
-    .text {
-        font: var(--font-m)
-    }
-}
-
-.size_l {
-    .title {
-        font: var(--font-xl);
-    }
-
-    .text {
-        font: var(--font-l)
+        .title {
+            font: var(--font-#{$title_size})
+        }
     }
 }

@@ -15,7 +15,9 @@
   "LogOut": "Logout",
   "ProfileLink": "Profile",
   "Currency": "Currency",
+  "SelectCurrency": "Select currency",
   "Country": "Country",
+  "SelectCountry": "Select country",
   "ArticleLink": "Articles",
   "LogoText": "Skuld",
   "CreateArticle": "Create article"

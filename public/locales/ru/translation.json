@@ -15,7 +15,9 @@
   "LogOut": "Выйти",
   "ProfileLink": "Профиль",
   "Currency": "Валюта",
+  "SelectCurrency": "Укажите валюту",
   "Country": "Страна",
+  "SelectCountry": "Укажите страну",
   "ArticleLink": "Статьи",
   "LogoText": "Skuld",
   "CreateArticle": "Создать статью"

@@ -10,12 +10,14 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { AddCommentSchema } from 'features/addComment';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlePage';
+import { rtkApi } from 'shared/api/rtkApi';
 import { PageScrollSchema } from 'widgets/Page';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     pageScrollSchema: PageScrollSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // async reducurs
     loginSchema?: LoginSchema;

@@ -1,0 +1,47 @@
+.dropDown {
+    position: relative;
+}
+
+.btn {
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.menu {
+    background: var(--listbox-bg);
+    position: absolute;
+    z-index: 10000;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.item {
+    padding: 10px 25px;
+    width: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+}
+
+@each $name, $p1, $p2 in (BottomLeft, top, right),
+    (BottomRight, top, left),
+    (TopRight, bottom, left),
+    (TopLeft, bottom, right) {
+    .options#{$name} {
+        #{$p1}: 100%;
+        #{$p2}: 0;
+    }
+}

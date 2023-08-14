@@ -26,8 +26,14 @@
     box-shadow: 4px 4px 8px var(--listbox-bg);
 }
 
-.optionsTop {
-    bottom: 100%;
+@each $name, $p1, $p2 in (BottomLeft, top, right),
+    (BottomRight, top, left),
+    (TopRight, bottom, left),
+    (TopLeft, bottom, right) {
+    .options#{$name} {
+        #{$p1}: 100%;
+        #{$p2}: 0;
+    }
 }
 
 .disabled {

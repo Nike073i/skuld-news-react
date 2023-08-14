@@ -5,7 +5,7 @@ import { ListBox, ListBoxItem } from './ListBox';
 
 const items: ListBoxItem[] = [
     {
-        value: 'first long value item string',
+        value: 'first',
         content: 'first element',
     },
     {
@@ -26,6 +26,9 @@ const meta = {
         items,
         value: items[0].value,
     },
+    decorators: [
+        (Story) => <div style={{ padding: 250 }}><Story /></div>,
+    ],
 } satisfies Meta<typeof ListBox>;
 
 export default meta;

@@ -4,6 +4,7 @@
   "FirstName": "Имя",
   "LastName": "Фамилия",
   "ErrorLoadProfile": "Произошла ошибка при загрузке данных профиля",
+  "ProfileNotFound": "Профиль не найден",
   "ErrorFixReload": "Попробуйте обновить страницу",
   "Cancel": "Отменить",
   "Save": "Сохранить",

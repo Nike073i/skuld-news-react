@@ -1,6 +1,7 @@
 {
   "ArticleNotFound": "Статья не найдена",
   "ErrorLoadArticle": "Произошла ошибка при загрузке данных статьи",
+  "ErrorLoadArticles": "Произошла ошибка при загрузке статей",
   "Comments": "Комментарии",
   "ContinueReading": "Читать далее...",
   "BackToList": "Обратно к списку",

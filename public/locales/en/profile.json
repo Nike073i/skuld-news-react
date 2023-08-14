@@ -4,6 +4,7 @@
   "FirstName": "First name",
   "LastName": "Last name",
   "ErrorLoadProfile": "An error occurred while loading profile data",
+  "ProfileNotFound": "Profile not found",
   "ErrorFixReload": "Try reloading the page",
   "Cancel": "Cancel",
   "Save": "Save",

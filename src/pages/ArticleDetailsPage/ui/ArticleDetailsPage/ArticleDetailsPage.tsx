@@ -25,16 +25,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
         className,
     } = props;
     const mods = {};
-    const { t } = useTranslation('article');
     const { articleId } = useParams<{ articleId: string }>();
-
-    if (!articleId) {
-        return (
-            <Page className={classNames(cls.articleDetailsPage, mods, [className])}>
-                {t('ArticleNotFound')}
-            </Page>
-        );
-    }
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

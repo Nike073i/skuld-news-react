@@ -28,7 +28,7 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 
 interface ArticleDetailsProps {
     className?: string;
-    articleId: string;
+    articleId?: string;
 }
 
 const reducers: ReducersList = {

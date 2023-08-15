@@ -12,6 +12,7 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@storybook/addon-onboarding',
         '@storybook/addon-interactions',
+        'storybook-addon-mock',
     ],
     framework: '@storybook/react-webpack5',
     webpackFinal: async (config: Configuration) => {
@@ -42,7 +43,7 @@ const config: StorybookConfig = {
         config!.module!.rules!.push(buildCssLoader(true));
         config!.plugins!.push(new DefinePlugin({
             __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify(''),
+            __API__: JSON.stringify('https://testapi.ru'),
             __PROJECT__: JSON.stringify('storybook'),
         }));
 

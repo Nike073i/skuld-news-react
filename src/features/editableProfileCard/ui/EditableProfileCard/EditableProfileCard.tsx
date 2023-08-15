@@ -10,7 +10,6 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
-import cls from './EditableProfileCard.module.scss';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -80,7 +79,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack gap="8" max className={classNames(cls.EditableProfileCard, {}, [className])}>
+            <VStack gap="8" max className={classNames('', {}, [className])}>
                 <EditableProfileCardHeader />
 
                 {validationErrors?.length && validationErrors.map(
@@ -89,6 +88,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                             key={err}
                             theme={TextTheme.ERROR}
                             text={validationErrorTranslates[err]}
+                            data-testid="EditableProfileCard.Error"
                         />
                     ),
                 )}

@@ -20,5 +20,7 @@
   "SelectCountry": "Select country",
   "ArticleLink": "Articles",
   "LogoText": "Skuld",
-  "CreateArticle": "Create article"
+  "CreateArticle": "Create article",
+  "AdminLink": "Admin panel",
+  "PageAccessDenied": "Page access denied"
 }

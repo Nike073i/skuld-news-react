@@ -20,5 +20,7 @@
   "SelectCountry": "Укажите страну",
   "ArticleLink": "Статьи",
   "LogoText": "Skuld",
-  "CreateArticle": "Создать статью"
+  "CreateArticle": "Создать статью",
+  "AdminLink": "Панель администратора",
+  "PageAccessDenied": "Доступ к странице запрещен"
 }

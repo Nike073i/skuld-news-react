@@ -15,7 +15,8 @@
             "*": [
                 "./src/*"
             ]
-        }
+        },
+        "isolatedModules": true,
     },
     "ts-node": {
         "compilerOptions": {

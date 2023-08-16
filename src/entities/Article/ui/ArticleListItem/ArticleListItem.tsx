@@ -10,10 +10,9 @@ import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'app/providers/router';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import cls from './ArticleListItem.module.scss';
-import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleView, ArticleBlockType } from '../../model/consts/consts';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 
 interface ArticleListItemProps {
     className?: string;

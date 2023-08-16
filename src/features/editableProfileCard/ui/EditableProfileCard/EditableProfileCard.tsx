@@ -19,7 +19,7 @@ import {
 } from '../../model/selectors/getProfileValidationErrors/getProfileValidationErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slices/profileSlice';
-import { ValidationProfileError } from '../../model/types/editableProfileCard';
+import { ValidationProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {

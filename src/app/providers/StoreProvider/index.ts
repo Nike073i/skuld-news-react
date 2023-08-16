@@ -5,6 +5,9 @@ import { StoreProvider } from './ui/StoreProvider';
 export {
     StoreProvider,
     createReduxStore,
+};
+
+export type {
     AppDispatch,
     StateSchema,
     ThunkConfig,

@@ -4,5 +4,5 @@ export {
     ArticleDetailsPageAsync as ArticleDetailsPage,
 };
 
-export { ArticleDetailsPageSchema } from './model/types';
+export type { ArticleDetailsPageSchema } from './model/types';
 export { articleDetailsPageReducer } from './model/slice';

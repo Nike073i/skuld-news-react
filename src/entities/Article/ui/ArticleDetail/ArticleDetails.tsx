@@ -21,7 +21,8 @@ import {
 } from '../../model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading';
 import { getArticleDetailsData } from '../../model/selectors/getArticleDetailsData/getArticleDetailsData';
 import { getArticleDetailsError } from '../../model/selectors/getArticleDetailsError/getArticleDetailsError';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleBlockType } from '../../model/consts/consts';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

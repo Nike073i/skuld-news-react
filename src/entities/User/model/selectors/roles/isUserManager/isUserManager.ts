@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { UserRole } from '../../../types/user';
+import { UserRole } from '../../../../model/consts/consts';
 import { getUserRoles } from '../getUserRoles/getUserRoles';
 
 export const isUserManager = createSelector(

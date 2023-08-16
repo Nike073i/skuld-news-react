@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
+import CurcularDependencyPlugin from 'circular-dependency-plugin';
 import { BuildOptions } from './types/config';
 
 function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
@@ -33,7 +34,10 @@ function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
                 },
             ],
         }),
-
+        new CurcularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true,
+        }),
     ];
     if (isDev) {
         plugins.push(new BundleAnalyzerPlugin({

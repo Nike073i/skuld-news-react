@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { DropDown, DropDownItem } from './DropDown';
-import { Button } from '../Button/Button';
+import { Button } from '../../../Button/Button';
 
 const trigger = <Button>Trigger button</Button>;
 const items: DropDownItem[] = [

@@ -1,29 +1,22 @@
-.listBox {
+.popup {
     position: relative;
-}
-
-.item {
-    padding: 10px 20px;
 }
 
 .trigger {
     background: none;
-    border: none;
     outline: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
 }
 
 .active {
     background: var(--inverted-primary-color);
 }
 
-.options {
-    background-color: var(--listbox-bg);
-    position: absolute;
-    z-index: 1000;
-    border-radius: 12px;
-    box-shadow: 4px 4px 8px var(--listbox-bg);
+.disabled {
+    opacity: 0.7;
 }
 
 @each $name, $p1, $p2 in (BottomLeft, top, right),
@@ -34,8 +27,4 @@
         #{$p1}: 100%;
         #{$p2}: 0;
     }
-}
-
-.disabled {
-    opacity: 0.7;
 }

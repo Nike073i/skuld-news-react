@@ -2,6 +2,6 @@
     background: var(--overlay-color);
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: var(--overlay-z-index);
     cursor: pointer;
 }

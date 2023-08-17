@@ -1,9 +1,9 @@
 import {
     Fragment, ReactNode, memo, useMemo,
 } from 'react';
-import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { Listbox as HuListBox } from '@headlessui/react';
-import { DropDownDirection } from 'shared/types/ui';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { DropDownDirection } from '@/shared/types/ui';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
 import { Button } from '../../../Button/Button';

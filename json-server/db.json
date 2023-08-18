@@ -611,5 +611,56 @@
       "username": "ivanov",
       "avatar": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "rate": 1,
+      "feedback": "Мой отзыв",
+      "id": "DMixcmD"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "rate": 2,
+      "id": "4EW21ZC"
+    },
+    {
+      "articleId": "6",
+      "userId": "1",
+      "rate": 2,
+      "id": "BbMmHPF"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }

@@ -30,7 +30,7 @@ module.exports = async (layer, sliceName) => {
             );
             await fs.writeFile(
                 resolveUIPath(componentName, `${componentName}.module.scss`),
-                styleTemplate(componentName),
+                styleTemplate(sliceName),
             );
         } catch (e) {
             console.log('Не удалось создать компонент');

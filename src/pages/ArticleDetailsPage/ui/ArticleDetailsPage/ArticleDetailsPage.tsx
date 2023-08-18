@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
@@ -11,6 +10,7 @@ import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticelDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticelDetailsPageHeader';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { ArticleRating } from '@/features/articleRating';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -33,6 +33,7 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticelDetailsPageHeader />
                     <ArticleDetails articleId={articleId} />
+                    <ArticleRating articleId={articleId} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments articleId={articleId} />
                 </VStack>

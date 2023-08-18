@@ -10,6 +10,7 @@ export enum CardTheme {
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     theme?: CardTheme;
+    fullWidth?: boolean;
 }
 
 export const Card: React.FC<PropsWithChildren<CardProps>> = (props: PropsWithChildren<CardProps>) => {
@@ -17,9 +18,12 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = (props: PropsWithChi
         className,
         children,
         theme = CardTheme.NORMAL,
+        fullWidth,
         ...otherProps
     } = props;
-    const mods = {};
+    const mods = {
+        [cls.fullWidth]: fullWidth,
+    };
     return (
         <div
             className={classNames(cls.card, mods, [className, cls[theme]])}

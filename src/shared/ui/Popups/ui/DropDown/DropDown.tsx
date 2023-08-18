@@ -27,7 +27,7 @@ export const DropDown = (props: DropDownProps) => {
     const {
         className, trigger, items, direction = 'top left',
     } = props;
-    const menuItems = items?.map((item) => {
+    const menuItems = items?.map((item, index) => {
         const content = ({ active }: { active: boolean }) => (
             <button
                 type="button"
@@ -41,14 +41,23 @@ export const DropDown = (props: DropDownProps) => {
 
         if (item.href) {
             return (
-                <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                <Menu.Item
+                    as={AppLink}
+                    to={item.href}
+                    disabled={item.disabled}
+                    key={`dropdown-key-${index}`}
+                >
                     {content}
                 </Menu.Item>
             );
         }
 
         return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item
+                as={Fragment}
+                disabled={item.disabled}
+                key={`dropdown-key-${index}`}
+            >
                 {content}
             </Menu.Item>
         );

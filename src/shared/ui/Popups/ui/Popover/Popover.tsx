@@ -24,7 +24,7 @@ export const Popover = (props: PopoverProps) => {
     const mods = {};
     return (
         <HuPopover className={classNames('', mods, [className, popupCls.popup])}>
-            <HuPopover.Button className={popupCls.trigger}>
+            <HuPopover.Button as="div" className={popupCls.trigger}>
                 {trigger}
             </HuPopover.Button>
             <HuPopover.Panel

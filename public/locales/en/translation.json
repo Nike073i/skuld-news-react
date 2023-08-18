@@ -22,5 +22,8 @@
   "LogoText": "Skuld",
   "CreateArticle": "Create article",
   "AdminLink": "Admin panel",
-  "PageAccessDenied": "Page access denied"
+  "PageAccessDenied": "Page access denied",
+  "YourFeedback": "Your feedback",
+  "Close": "Close",
+  "Send": "Send"
 }

@@ -22,5 +22,8 @@
   "LogoText": "Skuld",
   "CreateArticle": "Создать статью",
   "AdminLink": "Панель администратора",
-  "PageAccessDenied": "Доступ к странице запрещен"
+  "PageAccessDenied": "Доступ к странице запрещен",
+  "YourFeedback": "Ваш отзыв",
+  "Close": "Закрыть",
+  "Send": "Отправить"
 }

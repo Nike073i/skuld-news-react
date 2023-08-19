@@ -8,7 +8,7 @@ import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 export interface ArticleRatingProps {
     className?: string;
-    articleId?: string;
+    articleId: string;
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
@@ -20,7 +20,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const authData = useSelector(getUserAuthData);
 
     const { data, isLoading, isError } = useGetArticleRating({
-        articleId: articleId ?? '',
+        articleId,
         userId: authData?.id ?? '',
     });
     const [rateArticleMutation] = useRateArticle();
@@ -28,7 +28,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const handleRateArticle = useCallback((rate: number, feedback?: string) => {
         try {
             rateArticleMutation({
-                articleId: articleId ?? '',
+                articleId,
                 userId: authData?.id ?? '',
                 rate,
                 feedback,

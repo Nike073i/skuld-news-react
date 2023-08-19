@@ -27,6 +27,10 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
     const mods = {};
     const { articleId } = useParams<{ articleId: string }>();
 
+    if (!articleId) {
+        return null;
+    }
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.articleDetailsPage, mods, [className])}>

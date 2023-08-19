@@ -3,6 +3,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator';
 import { Navbar } from './Navbar';
+import exampleAvatar from '@/shared/assets/tests/avatarExample.jpg';
 
 const meta = {
     title: 'widgets/Navbar',
@@ -21,5 +22,5 @@ export const Dark: Story = {
 };
 
 export const AuthNavbar: Story = {
-    decorators: [StoreDecorator({ user: { authData: {} } })],
+    decorators: [StoreDecorator({ user: { authData: { avatar: exampleAvatar } } })],
 };

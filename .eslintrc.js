@@ -66,19 +66,20 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+        'ulbi-tv-plugin/public-api-imports': ['error', { alias: '@' }],
     },
-globals: {
-    __IS_DEV__: true,
+    globals: {
+        __IS_DEV__: true,
         __API__: true,
-            __PROJECT__: true,
+        __PROJECT__: true,
     },
-overrides: [
-    {
-        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
-        rules: {
-            'i18next/no-literal-string': 'off',
-            'max-len': 'off',
+    overrides: [
+        {
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+                'max-len': 'off',
+            },
         },
-    },
-],
+    ],
 };

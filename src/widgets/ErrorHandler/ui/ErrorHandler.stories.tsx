@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ErrorHandler } from './ErrorHandler';
+import { Theme } from '@/shared/consts/theme';
 
 const meta = {
     title: 'widgets/ErrorHandler',

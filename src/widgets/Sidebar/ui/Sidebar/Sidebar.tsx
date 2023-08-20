@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { VStack } from '@/shared/ui/Stack';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 import cls from './Sidebar.module.scss';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

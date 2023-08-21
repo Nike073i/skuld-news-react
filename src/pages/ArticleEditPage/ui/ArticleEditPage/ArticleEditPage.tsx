@@ -12,11 +12,11 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
         className,
     } = props;
     const mods = {};
-    const { id } = useParams<{ id: string }>();
-    const isEdit = Boolean(id);
+    const { articleId } = useParams<{ articleId: string }>();
+    const isEdit = Boolean(articleId);
     return (
         <Page className={classNames('', mods, [className])}>
-            {isEdit ? `Edit - ${id}` : 'New'}
+            {isEdit ? `Edit - ${articleId}` : 'New'}
         </Page>
     );
 });

@@ -11,7 +11,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropDown } from '@/features/avatarDropDown';
 import cls from './Navbar.module.scss';
-import { RoutePath } from '@/shared/consts/router';
+import { getRouteArticleCreate } from '@/shared/consts/router';
 
 interface NavbarProps {
     className?: string;
@@ -39,7 +39,7 @@ export const Navbar = memo((props: NavbarProps) => {
             <header className={classNames(cls.navbar, {}, [className])}>
                 <Text className={cls.appName} title={t('LogoText')} theme={TextTheme.INVERTED} />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
                 >
                     {t('CreateArticle')}

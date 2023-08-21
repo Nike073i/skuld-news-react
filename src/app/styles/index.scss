@@ -6,6 +6,7 @@
 body {
     font: var(--font-m);
     color: var(--primary-color);
+    background: var(--bg-color);
 }
 
 a {
@@ -17,7 +18,6 @@ li {
 }
 
 .app {
-    background: var(--bg-color);
     min-height: 100vh;
 }
 

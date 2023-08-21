@@ -48,7 +48,7 @@ export const AvatarDropDown = memo((props: AvatarDropDownProps) => {
                     onClick: onLogout,
                 },
             ]}
-            trigger={<Avatar size={30} src={authData.avatar} />}
+            trigger={<Avatar size={30} fallbackInverted src={authData.avatar} />}
             className={classNames('', mods, [className])}
             direction="bottom left"
         />

@@ -13,8 +13,9 @@ import { PAGE_ID } from '@/shared/consts/documentIds';
 import { getPageScrollByPath } from '../ScrollSave/model/selectors/getPageScrollByPath/getPageScrollByPath';
 import { pageScrollActions } from '../ScrollSave/model/slices/pageScrollSlice';
 import cls from './Page.module.scss';
+import { TestProps } from '@/shared/types/tests';
 
-interface PageProps extends PropsWithChildren {
+interface PageProps extends PropsWithChildren, TestProps {
     className?: string;
     onScrollEnd?: () => void;
 }
@@ -24,6 +25,7 @@ export const Page: FC<PropsWithChildren<PageProps>> = (props: PropsWithChildren<
         className,
         children,
         onScrollEnd,
+        'data-testid': dateTestId = 'Page',
     } = props;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
@@ -54,6 +56,7 @@ export const Page: FC<PropsWithChildren<PageProps>> = (props: PropsWithChildren<
             className={classNames(cls.pageWrapper, mods, [className])}
             onScroll={onScroll}
             id={PAGE_ID}
+            data-testid={dateTestId}
         >
             {children}
             {onScrollEnd && <div ref={triggerRef} className={cls.trigger} />}

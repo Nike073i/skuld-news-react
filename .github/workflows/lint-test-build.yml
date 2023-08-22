@@ -1,34 +1,71 @@
 name: linting, testing, building
 on:
   push: 
-    branches: [master]
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 jobs:
-  pipeline:
+  buil-and-ui-testing:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version: [ 17.x ]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install
+        run: npm ci
       - name: build prod project
-        run: npm run build:prod
-      - name: linting ts
-        run: npm run lint:ts
         if: always()
+        run: npm run build:prod
+      - name: build storybook
+        if: always()
+        run: npm run storybook:build
+      - name: screen testing
+        if: always()
+        run: npm run test:ui:ci
+      - name: Generate unit HTML report
+        if: always()
+        run: npm run test:ui:report
+      - name: Setup Pages
+        if: always()
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.loki'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: always()
+        uses: actions/deploy-pages@v1
+        
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm ci
+      - name: linting ts
+        if: always()
+        run: npm run lint:ts
       - name: linting scss
         run: npm run lint:scss
-        if: always()
       - name: unit testing
+        if: always()
         run: npm run test:unit
-        if: always()	    
-      - name: build storybook
-        run: npm run storybook:build
-        if: always()
-      - name: screen testing
-        run: npm run test:ui:ci
-        if: always()

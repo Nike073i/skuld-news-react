@@ -85,6 +85,7 @@
     "jest-environment-jsdom": "^29.6.1",
     "jest-html-reporters": "^3.1.4",
     "json-server": "^0.17.3",
+    "lint-staged": "^14.0.1",
     "mini-css-extract-plugin": "^2.7.6",
     "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.13.11",
@@ -138,5 +139,9 @@
         "preset": "iPhone 7"
       }
     }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint",
+    "**/*.scss": "stylelint"
   }
 }

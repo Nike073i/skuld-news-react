@@ -58,12 +58,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const modalContent = (
         <>
             <Text title={feedbackTitle} />
-            <Input placeholder={t('YourFeedback')} value={feedback} onChange={setFeedback} />
+            <Input
+                data-testid="RatingCard.Input"
+                placeholder={t('YourFeedback')}
+                value={feedback}
+                onChange={setFeedback}
+            />
         </>
     );
 
     return (
-        <Card className={className} fullWidth>
+        <Card data-testid="RatingCard" className={className} fullWidth>
             <VStack gap="8" align="center" max>
                 <Text title={starsScore ? t('YourRate') : title} />
                 <StarRating size={40} selectedStars={rate} onSelect={onSelectStar} />
@@ -76,7 +81,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
                             <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_DANGER}>
                                 {t('Close')}
                             </Button>
-                            <Button onClick={acceptHanlde} theme={ButtonTheme.OUTLINE}>
+                            <Button
+                                data-testid="RatingCard.Send"
+                                onClick={acceptHanlde}
+                                theme={ButtonTheme.OUTLINE}
+                            >
                                 {t('Send')}
                             </Button>
                         </HStack>
@@ -87,7 +96,12 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 <Drawer isOpen={isModalOpen} onClose={cancelHandle}>
                     <VStack gap="32">
                         {modalContent}
-                        <Button onClick={acceptHanlde} size={ButtonSize.L} fullWidth>
+                        <Button
+                            data-testid="RatingCard.Send"
+                            onClick={acceptHanlde}
+                            size={ButtonSize.L}
+                            fullWidth
+                        >
                             {t('Send')}
                         </Button>
                     </VStack>

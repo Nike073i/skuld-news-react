@@ -55,6 +55,7 @@ export const Flex = (props: FlexProps) => {
         gap,
         max,
         role,
+        ...otherProps
     } = props;
     const classes = [
         className,
@@ -67,7 +68,7 @@ export const Flex = (props: FlexProps) => {
         [cls.max]: max,
     };
     return (
-        <div role={role} className={classNames(cls.flex, mods, classes)}>
+        <div role={role} className={classNames(cls.flex, mods, classes)} {...otherProps}>
             {children}
         </div>
     );

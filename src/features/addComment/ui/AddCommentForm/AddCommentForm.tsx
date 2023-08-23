@@ -8,7 +8,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { HStack } from '@/shared/ui/Stack';
 import cls from './AddCommentForm.module.scss';
-import { getAddCommentError } from '../../model/selectors/getAddCommentError/getAddCommentError';
 import { getAddCommentText } from '../../model/selectors/getAddCommentText/getAddCommentText';
 import { addCommentActions, addCommentReducer } from '../../model/slice/addCommentSlice';
 
@@ -27,7 +26,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     } = props;
     const { t } = useTranslation('comment');
     const text = useSelector(getAddCommentText);
-    const error = useSelector(getAddCommentError);
     const dispatch = useAppDispatch();
 
     const onChangeText = useCallback((value: string) => {
@@ -42,9 +40,21 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const mods = {};
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack justify="between" max className={classNames(cls.addCommentForm, mods, [className])}>
-                <Input className={cls.input} placeholder={t('EnterCommentText')} value={text} onChange={onChangeText} />
+            <HStack
+                data-testid="AddCommentForm"
+                justify="between"
+                max
+                className={classNames(cls.addCommentForm, mods, [className])}
+            >
+                <Input
+                    data-testid="AddCommentForm.Input"
+                    className={cls.input}
+                    placeholder={t('EnterCommentText')}
+                    value={text}
+                    onChange={onChangeText}
+                />
                 <Button
+                    data-testid="AddCommentForm.Button"
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSendHandler}
                 >

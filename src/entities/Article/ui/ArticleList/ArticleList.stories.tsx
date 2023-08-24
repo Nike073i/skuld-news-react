@@ -3,21 +3,25 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator';
 import { Theme } from '@/shared/consts/theme';
 import { ArticleList } from './ArticleList';
 import { Article } from '../../model/types/article';
-import { ArticleType, ArticleBlockType, ArticleView } from '../../model/consts/consts';
+import {
+    ArticleType,
+    ArticleBlockType,
+    ArticleView,
+} from '../../model/consts/consts';
 
 const article: Article = {
     id: '1',
-    user: { id: '1', username: 'ivanov', avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg' },
+    user: {
+        id: '1',
+        username: 'ivanov',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
+    },
     title: 'Javascript news and another text',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    type: [
-        ArticleType.IT,
-        ArticleType.SCIENCE,
-        ArticleType.ECONOMICS,
-    ],
+    type: [ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS],
     blocks: [
         {
             id: '1',
@@ -80,7 +84,9 @@ const article: Article = {
     ],
 };
 
-const articles: Article[] = new Array(16).fill(0).map((item, index) => ({ ...article, id: String(index) }));
+const articles: Article[] = new Array(16)
+    .fill(0)
+    .map((item, index) => ({ ...article, id: String(index) }));
 
 const meta = {
     title: 'entities/Article/ArticleList',

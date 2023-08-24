@@ -13,12 +13,7 @@ interface LoginModalProps {
 }
 
 export const LoginModal = (props: LoginModalProps) => {
-    const {
-        className,
-        isOpen,
-        onClose,
-        portal,
-    } = props;
+    const { className, isOpen, onClose, portal } = props;
     const mods = {};
     return (
         <Modal

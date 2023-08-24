@@ -18,9 +18,7 @@ interface NavbarProps {
 }
 
 export const Navbar = memo((props: NavbarProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const portal = document.getElementById('app') || document.body;
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
@@ -37,7 +35,11 @@ export const Navbar = memo((props: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
-                <Text className={cls.appName} title={t('LogoText')} theme={TextTheme.INVERTED} />
+                <Text
+                    className={cls.appName}
+                    title={t('LogoText')}
+                    theme={TextTheme.INVERTED}
+                />
                 <AppLink
                     to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}

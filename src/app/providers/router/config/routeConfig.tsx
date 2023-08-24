@@ -10,9 +10,15 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import {
     AppRoutes,
-    getRouteAbout, getRouteAdmin, getRouteArticle,
-    getRouteArticleCreate, getRouteArticleEdit, getRouteArticles,
-    getRouteForbidden, getRouteMain, getRouteProfile,
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteArticle,
+    getRouteArticleCreate,
+    getRouteArticleEdit,
+    getRouteArticles,
+    getRouteForbidden,
+    getRouteMain,
+    getRouteProfile,
 } from '@/shared/consts/router';
 import { AppRoutesProps } from '@/shared/types/router';
 

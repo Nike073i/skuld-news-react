@@ -20,7 +20,11 @@ const meta = {
         trigger,
     },
     decorators: [
-        (Story) => <div style={{ padding: 125 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 125 }}>
+                <Story />
+            </div>
+        ),
     ],
 } satisfies Meta<typeof DropDown>;
 

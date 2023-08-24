@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { AddCommentSchema } from '../types/addComment';
 
-const initialState: AddCommentSchema = { };
+const initialState: AddCommentSchema = {};
 
 export const addCommentSlice = createSlice({
     name: 'addComment',

@@ -36,14 +36,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const [starsScore, setStarsScore] = useState(rate);
     const [feedback, setFeedback] = useState<string>();
 
-    const onSelectStar = useCallback((selectedStarsScore: number) => {
-        setStarsScore(selectedStarsScore);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsScore);
-        }
-    }, [hasFeedback, onAccept]);
+    const onSelectStar = useCallback(
+        (selectedStarsScore: number) => {
+            setStarsScore(selectedStarsScore);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsScore);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHanlde = useCallback(() => {
         setIsModalOpen(false);
@@ -71,14 +74,21 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <Card data-testid="RatingCard" className={className} fullWidth>
             <VStack gap="8" align="center" max>
                 <Text title={starsScore ? t('YourRate') : title} />
-                <StarRating size={40} selectedStars={rate} onSelect={onSelectStar} />
+                <StarRating
+                    size={40}
+                    selectedStars={rate}
+                    onSelect={onSelectStar}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy onClose={cancelHandle}>
                     <VStack gap="32">
                         {modalContent}
                         <HStack max gap="16" justify="end">
-                            <Button onClick={cancelHandle} theme={ButtonTheme.OUTLINE_DANGER}>
+                            <Button
+                                onClick={cancelHandle}
+                                theme={ButtonTheme.OUTLINE_DANGER}
+                            >
                                 {t('Close')}
                             </Button>
                             <Button

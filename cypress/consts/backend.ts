@@ -13,7 +13,9 @@ const ApiRoutes: Record<Endpoints, string> = {
 };
 
 export const getArticlesRoute = () => `${BaseUrl}${ApiRoutes.ARTICLES}`;
-export const getArticleRoute = (articleId: string) => `${BaseUrl}${ApiRoutes.ARTICLES}/${articleId}`;
+export const getArticleRoute = (articleId: string) =>
+    `${BaseUrl}${ApiRoutes.ARTICLES}/${articleId}`;
 export const getProfilesRoute = () => `${BaseUrl}${ApiRoutes.PROFILES}`;
-export const getProfileRoute = (profileId: string) => `${BaseUrl}${ApiRoutes.PROFILES}/${profileId}`;
+export const getProfileRoute = (profileId: string) =>
+    `${BaseUrl}${ApiRoutes.PROFILES}/${profileId}`;
 export const getLoginRoute = () => `${BaseUrl}${ApiRoutes.LOGIN}`;

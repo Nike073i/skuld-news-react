@@ -13,9 +13,7 @@ interface ArticleInfinityListProps {
 }
 
 export const ArticleInfinityList = memo((props: ArticleInfinityListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation('article');
     const articles = useSelector(getArticles.selectAll);

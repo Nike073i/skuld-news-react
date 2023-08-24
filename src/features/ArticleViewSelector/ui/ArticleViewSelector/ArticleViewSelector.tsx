@@ -14,8 +14,8 @@ interface ArticleViewSelectorProps {
 }
 
 interface ViewType {
-    view: ArticleView,
-    icon: React.FC<React.SVGProps<SVGSVGElement>>,
+    view: ArticleView;
+    icon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
 const viewTypes: ViewType[] = [
@@ -30,11 +30,7 @@ const viewTypes: ViewType[] = [
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-    const {
-        className,
-        view,
-        onViewClick,
-    } = props;
+    const { className, view, onViewClick } = props;
     const mods = {};
     const onClickHandler = (newView: ArticleView) => () => {
         onViewClick?.(newView);
@@ -50,7 +46,9 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [cls.notSelected]: viewType.view !== view })}
+                        className={classNames('', {
+                            [cls.notSelected]: viewType.view !== view,
+                        })}
                     />
                 </Button>
             ))}

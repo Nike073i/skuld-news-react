@@ -7,11 +7,10 @@ import { getRouteForbidden, getRouteMain } from '@/shared/consts/router';
 interface RequireAuthProps {
     roles?: UserRole[];
 }
-export const RequireAuth: FC<PropsWithChildren<RequireAuthProps>> = (props: PropsWithChildren<RequireAuthProps>) => {
-    const {
-        children,
-        roles,
-    } = props;
+export const RequireAuth: FC<PropsWithChildren<RequireAuthProps>> = (
+    props: PropsWithChildren<RequireAuthProps>,
+) => {
+    const { children, roles } = props;
 
     const auth = useSelector(getUserAuthData);
     const userRoles = useSelector(getUserRoles);
@@ -25,11 +24,19 @@ export const RequireAuth: FC<PropsWithChildren<RequireAuthProps>> = (props: Prop
     }, [roles, userRoles]);
 
     if (!auth) {
-        return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
+        return (
+            <Navigate to={getRouteMain()} state={{ from: location }} replace />
+        );
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
+        return (
+            <Navigate
+                to={getRouteForbidden()}
+                state={{ from: location }}
+                replace
+            />
+        );
     }
     return children;
 };

@@ -7,7 +7,10 @@ export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
 
-type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+type DivProps = DetailedHTMLProps<
+    HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+>;
 
 export interface FlexProps extends DivProps {
     className?: string;
@@ -68,7 +71,11 @@ export const Flex = (props: FlexProps) => {
         [cls.max]: max,
     };
     return (
-        <div role={role} className={classNames(cls.flex, mods, classes)} {...otherProps}>
+        <div
+            role={role}
+            className={classNames(cls.flex, mods, classes)}
+            {...otherProps}
+        >
             {children}
         </div>
     );

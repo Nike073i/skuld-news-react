@@ -5,17 +5,17 @@ import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const article: Article = {
     id: '1',
-    user: { id: '1', username: 'ivanov', avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg' },
+    user: {
+        id: '1',
+        username: 'ivanov',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
+    },
     title: 'Javascript news and another text',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
-    type: [
-        ArticleType.IT,
-        ArticleType.SCIENCE,
-        ArticleType.ECONOMICS,
-    ],
+    type: [ArticleType.IT, ArticleType.SCIENCE, ArticleType.ECONOMICS],
     blocks: [
         {
             id: '1',
@@ -81,9 +81,7 @@ const article: Article = {
 const meta = {
     title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
-    decorators: [
-        StoreDecorator({}),
-    ],
+    decorators: [StoreDecorator({})],
     parameters: {
         mockData: [
             {

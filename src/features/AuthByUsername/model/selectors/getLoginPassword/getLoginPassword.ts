@@ -1,3 +1,4 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-export const getLoginPassword = (state: StateSchema) => state?.loginSchema?.password || '';
+export const getLoginPassword = (state: StateSchema) =>
+    state?.loginSchema?.password || '';

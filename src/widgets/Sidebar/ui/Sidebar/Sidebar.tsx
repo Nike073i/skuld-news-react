@@ -10,7 +10,7 @@ import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
-    className?: string,
+    className?: string;
 }
 
 export const Sidebar = memo((props: SidebarProps) => {
@@ -20,17 +20,23 @@ export const Sidebar = memo((props: SidebarProps) => {
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
-    const itemsList = useMemo(() => sidebarItems.map((item) => (
-        <SidebarItem
-            item={item}
-            collapsed={collapsed}
-            key={item.path}
-        />
-    )), [collapsed, sidebarItems]);
+    const itemsList = useMemo(
+        () =>
+            sidebarItems.map((item) => (
+                <SidebarItem
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.path}
+                />
+            )),
+        [collapsed, sidebarItems],
+    );
     return (
         <aside
             data-testid="sidebar"
-            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [className])}
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
         >
             <Button
                 data-testid="sidebar-toggle"

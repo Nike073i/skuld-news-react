@@ -1,5 +1,9 @@
 import {
-    FC, MutableRefObject, PropsWithChildren, useRef, UIEvent,
+    FC,
+    MutableRefObject,
+    PropsWithChildren,
+    useRef,
+    UIEvent,
 } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -20,7 +24,9 @@ interface PageProps extends PropsWithChildren, TestProps {
     onScrollEnd?: () => void;
 }
 
-export const Page: FC<PropsWithChildren<PageProps>> = (props: PropsWithChildren<PageProps>) => {
+export const Page: FC<PropsWithChildren<PageProps>> = (
+    props: PropsWithChildren<PageProps>,
+) => {
     const {
         className,
         children,
@@ -31,7 +37,9 @@ export const Page: FC<PropsWithChildren<PageProps>> = (props: PropsWithChildren<
     const { pathname } = useLocation();
     const containerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
-    const scrollPosition = useSelector((state: StateSchema) => getPageScrollByPath(state, pathname));
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getPageScrollByPath(state, pathname),
+    );
     const mods = {};
 
     useInfiniteScroll({
@@ -45,10 +53,12 @@ export const Page: FC<PropsWithChildren<PageProps>> = (props: PropsWithChildren<
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(pageScrollActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: pathname,
-        }));
+        dispatch(
+            pageScrollActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: pathname,
+            }),
+        );
     }, 500);
     return (
         <main

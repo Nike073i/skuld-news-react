@@ -24,12 +24,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const {
-        className,
-        article,
-        view,
-        target,
-    } = props;
+    const { className, article, view, target } = props;
     const mods = {};
     const { t } = useTranslation('article');
 
@@ -42,7 +37,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     );
 
     if (view === ArticleView.LIST) {
-        const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+        const textBlock = article.blocks.find(
+            (block) => block.type === ArticleBlockType.TEXT,
+        ) as ArticleTextBlock;
         return (
             <div
                 data-testid="ArticleListItem"
@@ -51,7 +48,10 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Text
+                            text={article.user.username}
+                            className={cls.username}
+                        />
                         <Text text={article.createdAt} className={cls.date} />
                     </div>
                     <Text title={article.title} className={cls.title} />
@@ -62,9 +62,17 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         alt={article.title}
                         className={cls.image}
                     />
-                    {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
+                    {textBlock && (
+                        <ArticleTextBlockComponent
+                            block={textBlock}
+                            className={cls.textBlock}
+                        />
+                    )}
                     <div className={cls.footer}>
-                        <AppLink to={getRouteArticle(article.id)} target={target}>
+                        <AppLink
+                            to={getRouteArticle(article.id)}
+                            target={target}
+                        >
                             <Button theme={ButtonTheme.OUTLINE}>
                                 {t('ContinueReading')}
                             </Button>

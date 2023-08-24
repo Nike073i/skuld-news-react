@@ -1,6 +1,4 @@
-import {
-    Fragment, ReactNode,
-} from 'react';
+import { Fragment, ReactNode } from 'react';
 import { Menu } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
@@ -24,9 +22,7 @@ interface DropDownProps {
 }
 
 export const DropDown = (props: DropDownProps) => {
-    const {
-        className, trigger, items, direction = 'top left',
-    } = props;
+    const { className, trigger, items, direction = 'top left' } = props;
     const menuItems = items?.map((item, index) => {
         const content = ({ active }: { active: boolean }) => (
             <button
@@ -64,10 +60,11 @@ export const DropDown = (props: DropDownProps) => {
     });
     const menuClasses = [mapDirectionClass[direction]];
     return (
-        <Menu as="div" className={classNames('', {}, [className, popupCls.popup])}>
-            <Menu.Button className={popupCls.trigger}>
-                {trigger}
-            </Menu.Button>
+        <Menu
+            as="div"
+            className={classNames('', {}, [className, popupCls.popup])}
+        >
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {menuItems}
             </Menu.Items>

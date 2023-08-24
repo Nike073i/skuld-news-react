@@ -13,17 +13,42 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password' } })],
+    decorators: [
+        StoreDecorator({
+            loginSchema: { username: 'username', password: 'password' },
+        }),
+    ],
 };
 
 export const Dark: Story = {
-    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password' } }), ThemeDecorator(Theme.DARK)],
+    decorators: [
+        StoreDecorator({
+            loginSchema: { username: 'username', password: 'password' },
+        }),
+        ThemeDecorator(Theme.DARK),
+    ],
 };
 
 export const withErrorLight: Story = {
-    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password', error: 'Some error' } })],
+    decorators: [
+        StoreDecorator({
+            loginSchema: {
+                username: 'username',
+                password: 'password',
+                error: 'Some error',
+            },
+        }),
+    ],
 };
 
 export const loadingLight: Story = {
-    decorators: [StoreDecorator({ loginSchema: { username: 'username', password: 'password', isLoading: true } })],
+    decorators: [
+        StoreDecorator({
+            loginSchema: {
+                username: 'username',
+                password: 'password',
+                isLoading: true,
+            },
+        }),
+    ],
 };

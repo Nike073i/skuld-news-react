@@ -10,12 +10,7 @@ interface SkeletonProps {
 }
 
 export const Skeleton = memo((props: SkeletonProps) => {
-    const {
-        className,
-        height,
-        width,
-        border,
-    } = props;
+    const { className, height, width, border } = props;
     const styles: CSSProperties = {
         width,
         height,
@@ -23,6 +18,9 @@ export const Skeleton = memo((props: SkeletonProps) => {
     };
     const mods = {};
     return (
-        <div className={classNames(cls.skeleton, mods, [className])} style={styles} />
+        <div
+            className={classNames(cls.skeleton, mods, [className])}
+            style={styles}
+        />
     );
 });

@@ -6,39 +6,45 @@ import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
 import ArticleIcon from '@/shared/assets/icons/article-20-20.svg';
 import { SidebarItemType } from '../types/sidebarItem';
 import {
-    getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
+    getRouteAbout,
+    getRouteArticles,
+    getRouteMain,
+    getRouteProfile,
 } from '@/shared/consts/router';
 
-export const getSidebarItems = createSelector(getUserAuthData, (userAuthData) => {
-    const sidebarItemsList: SidebarItemType[] = [
-        {
-            path: getRouteMain(),
-            textKey: 'MainLink',
-            Icon: MainIcon,
-        },
-        {
-            path: getRouteAbout(),
-            textKey: 'AboutLink',
-            Icon: AboutIcon,
-        },
-    ];
-
-    if (userAuthData) {
-        sidebarItemsList.push(
+export const getSidebarItems = createSelector(
+    getUserAuthData,
+    (userAuthData) => {
+        const sidebarItemsList: SidebarItemType[] = [
             {
-                path: getRouteProfile(userAuthData.id),
-                textKey: 'ProfileLink',
-                Icon: ProfileIcon,
-                authOnly: true,
+                path: getRouteMain(),
+                textKey: 'MainLink',
+                Icon: MainIcon,
             },
             {
-                path: getRouteArticles(),
-                textKey: 'ArticleLink',
-                Icon: ArticleIcon,
-                authOnly: true,
+                path: getRouteAbout(),
+                textKey: 'AboutLink',
+                Icon: AboutIcon,
             },
-        );
-    }
+        ];
 
-    return sidebarItemsList;
-});
+        if (userAuthData) {
+            sidebarItemsList.push(
+                {
+                    path: getRouteProfile(userAuthData.id),
+                    textKey: 'ProfileLink',
+                    Icon: ProfileIcon,
+                    authOnly: true,
+                },
+                {
+                    path: getRouteArticles(),
+                    textKey: 'ArticleLink',
+                    Icon: ArticleIcon,
+                    authOnly: true,
+                },
+            );
+        }
+
+        return sidebarItemsList;
+    },
+);

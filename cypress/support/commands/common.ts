@@ -3,17 +3,26 @@ import { getLoginRoute } from '../../consts/backend';
 import { USER_LOCALSTORAGE_KEY } from '../../../src/shared/consts/localstorage';
 import { User } from '../../../src/entities/User';
 
-export const login = (username: string = 'testuser', password: string = '123') => cy.request({
-    method: 'POST',
-    url: getLoginRoute(),
-    body: {
-        username,
-        password,
-    },
-}).then(({ body }) => {
-    window.localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(body));
-    return body;
-});
+export const login = (
+    username: string = 'testuser',
+    password: string = '123',
+) =>
+    cy
+        .request({
+            method: 'POST',
+            url: getLoginRoute(),
+            body: {
+                username,
+                password,
+            },
+        })
+        .then(({ body }) => {
+            window.localStorage.setItem(
+                USER_LOCALSTORAGE_KEY,
+                JSON.stringify(body),
+            );
+            return body;
+        });
 
 export const getByTestId = (testId: string) => cy.get(selectByTestId(testId));
 

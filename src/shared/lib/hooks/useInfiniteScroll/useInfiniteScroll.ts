@@ -7,11 +7,7 @@ export interface UseInfiniteScrollOptions {
 }
 
 export function useInfiniteScroll(props: UseInfiniteScrollOptions) {
-    const {
-        callback,
-        triggerRef,
-        containerRef,
-    } = props;
+    const { callback, triggerRef, containerRef } = props;
 
     useEffect(() => {
         const triggerElement = triggerRef.current;

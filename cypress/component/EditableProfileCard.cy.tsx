@@ -1,5 +1,8 @@
 import { EditableProfileCard } from '@/features/editableProfileCard';
-import { ComponentRenderOptions, TestProvider } from '@/shared/lib/tests/componentRender/componentRender';
+import {
+    ComponentRenderOptions,
+    TestProvider,
+} from '@/shared/lib/tests/componentRender/componentRender';
 
 const USER_ID = '1';
 

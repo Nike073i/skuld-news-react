@@ -13,7 +13,9 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     fullWidth?: boolean;
 }
 
-export const Card: React.FC<PropsWithChildren<CardProps>> = (props: PropsWithChildren<CardProps>) => {
+export const Card: React.FC<PropsWithChildren<CardProps>> = (
+    props: PropsWithChildren<CardProps>,
+) => {
     const {
         className,
         children,

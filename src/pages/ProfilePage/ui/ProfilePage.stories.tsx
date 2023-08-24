@@ -10,20 +10,22 @@ import ProfilePage from './ProfilePage';
 const meta = {
     title: 'pages/ProfilePage',
     component: ProfilePage,
-    decorators: [StoreDecorator({
-        profileSchema: {
-            form: {
-                username: 'admin',
-                age: 21,
-                country: Country.Kazakhstan,
-                lastname: 'Filippov',
-                first: 'Nikita',
-                city: 'Ulyanovsk',
-                currency: Currency.RUB,
-                avatar,
+    decorators: [
+        StoreDecorator({
+            profileSchema: {
+                form: {
+                    username: 'admin',
+                    age: 21,
+                    country: Country.Kazakhstan,
+                    lastname: 'Filippov',
+                    first: 'Nikita',
+                    city: 'Ulyanovsk',
+                    currency: Currency.RUB,
+                    avatar,
+                },
             },
-        },
-    })],
+        }),
+    ],
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;

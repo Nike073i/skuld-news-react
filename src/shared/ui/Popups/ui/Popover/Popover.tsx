@@ -14,22 +14,17 @@ interface PopoverProps {
 }
 
 export const Popover = (props: PopoverProps) => {
-    const {
-        className,
-        trigger,
-        direction = 'bottom right',
-        children,
-    } = props;
+    const { className, trigger, direction = 'bottom right', children } = props;
     const menuClasses = [mapDirectionClass[direction]];
     const mods = {};
     return (
-        <HuPopover className={classNames('', mods, [className, popupCls.popup])}>
+        <HuPopover
+            className={classNames('', mods, [className, popupCls.popup])}
+        >
             <HuPopover.Button as="div" className={popupCls.trigger}>
                 {trigger}
             </HuPopover.Button>
-            <HuPopover.Panel
-                className={classNames(cls.panel, {}, menuClasses)}
-            >
+            <HuPopover.Panel className={classNames(cls.panel, {}, menuClasses)}>
                 {children}
             </HuPopover.Panel>
         </HuPopover>

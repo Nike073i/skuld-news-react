@@ -24,7 +24,11 @@ export const Modal = (props: ModalProps) => {
         lazy,
     } = props;
 
-    const { close, isClosing, isMounted } = useModal({ animationDelay: 300, onClose, isOpen });
+    const { close, isClosing, isMounted } = useModal({
+        animationDelay: 300,
+        onClose,
+        isOpen,
+    });
 
     const mods: Mods = {
         [cls.opened]: isOpen,
@@ -37,9 +41,7 @@ export const Modal = (props: ModalProps) => {
         <Portal element={portal}>
             <div className={classNames(cls.modal, mods, [className])}>
                 <Overlay onClick={close} />
-                <div className={cls.content}>
-                    {children}
-                </div>
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );

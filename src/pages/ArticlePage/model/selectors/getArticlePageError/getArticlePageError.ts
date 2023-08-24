@@ -1,4 +1,4 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-export const getArticlePageError = (state: StateSchema) => state
-    .articlePageSchema?.error;
+export const getArticlePageError = (state: StateSchema) =>
+    state.articlePageSchema?.error;

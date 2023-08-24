@@ -13,7 +13,7 @@ const AdminPanelPage = memo((props: AdminPanelPageProps) => {
         <Page
             data-testid="AdminPanelPage"
             className={classNames('', {}, [className])}
-        // eslint-disable-next-line i18next/no-literal-string
+            // eslint-disable-next-line i18next/no-literal-string
         >
             ADMIN_PAGE
         </Page>

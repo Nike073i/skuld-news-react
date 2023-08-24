@@ -7,7 +7,11 @@ import { ArticleDetails } from './ArticleDetails';
 
 const articleData = {
     id: '1',
-    user: { id: '1', username: 'ivanov', avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg' },
+    user: {
+        id: '1',
+        username: 'ivanov',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
+    },
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
@@ -82,12 +86,14 @@ const meta = {
     args: {
         articleId: '',
     },
-    decorators: [StoreDecorator({
-        articleDetailsSchema: {
-            data: articleData,
-        },
-        user: { authData: {} },
-    })],
+    decorators: [
+        StoreDecorator({
+            articleDetailsSchema: {
+                data: articleData,
+            },
+            user: { authData: {} },
+        }),
+    ],
 } satisfies Meta<typeof ArticleDetails>;
 
 export default meta;
@@ -96,9 +102,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {};
 export const Dark: Story = { decorators: [ThemeDecorator(Theme.DARK)] };
 export const IsLoading: Story = {
-    decorators: [
-        StoreDecorator({ articleDetailsSchema: { isLoading: true } }),
-    ],
+    decorators: [StoreDecorator({ articleDetailsSchema: { isLoading: true } })],
 };
 export const IsLoadingDark: Story = {
     decorators: [
@@ -107,9 +111,7 @@ export const IsLoadingDark: Story = {
     ],
 };
 export const Error: Story = {
-    decorators: [
-        StoreDecorator({ articleDetailsSchema: { error: 'Error' } }),
-    ],
+    decorators: [StoreDecorator({ articleDetailsSchema: { error: 'Error' } })],
 };
 export const ErrorDark: Story = {
     decorators: [

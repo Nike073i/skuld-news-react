@@ -8,9 +8,7 @@ interface ArticleEditPageProps {
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const mods = {};
     const { articleId } = useParams<{ articleId: string }>();
     const isEdit = Boolean(articleId);

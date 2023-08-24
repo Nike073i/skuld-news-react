@@ -9,10 +9,14 @@ export const pageScrollSlice = createSlice({
     name: 'pageScrollSlice',
     initialState,
     reducers: {
-        setScrollPosition: (state, { payload }: PayloadAction<{ path: string; position: number }>) => {
+        setScrollPosition: (
+            state,
+            { payload }: PayloadAction<{ path: string; position: number }>,
+        ) => {
             state.entries[payload.path] = payload.position;
         },
     },
 });
 
-export const { reducer: pageScrollReducer, actions: pageScrollActions } = pageScrollSlice;
+export const { reducer: pageScrollReducer, actions: pageScrollActions } =
+    pageScrollSlice;

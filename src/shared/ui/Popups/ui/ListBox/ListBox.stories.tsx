@@ -27,7 +27,11 @@ const meta = {
         value: items[0].value,
     },
     decorators: [
-        (Story) => <div style={{ padding: 250 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 250 }}>
+                <Story />
+            </div>
+        ),
     ],
 } satisfies Meta<typeof ListBox>;
 

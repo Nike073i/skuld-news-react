@@ -1,3 +1,4 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-export const getArticleDetailsData = (state: StateSchema) => state.articleDetailsSchema?.data;
+export const getArticleDetailsData = (state: StateSchema) =>
+    state.articleDetailsSchema?.data;

@@ -22,7 +22,13 @@ const config: StorybookConfig = {
             src: path.resolve(__dirname, '..', '..', 'src'),
             entry: '',
             locales: path.resolve(__dirname, '..', '..', 'public', 'locales'),
-            buildLocales: path.resolve(__dirname, '..', '..', 'build', 'locales'),
+            buildLocales: path.resolve(
+                __dirname,
+                '..',
+                '..',
+                'build',
+                'locales',
+            ),
         };
         config!.resolve!.modules!.push(paths.src);
         config!.resolve!.extensions!.push('.ts', '.tsx');
@@ -45,15 +51,16 @@ const config: StorybookConfig = {
 
         config!.module!.rules!.push(buildSvgLoader());
         config!.module!.rules!.push(buildCssLoader(true));
-        config!.plugins!.push(new DefinePlugin({
-            __IS_DEV__: JSON.stringify(true),
-            __API__: JSON.stringify('https://testapi.ru'),
-            __PROJECT__: JSON.stringify('storybook'),
-        }));
+        config!.plugins!.push(
+            new DefinePlugin({
+                __IS_DEV__: JSON.stringify(true),
+                __API__: JSON.stringify('https://testapi.ru'),
+                __PROJECT__: JSON.stringify('storybook'),
+            }),
+        );
 
         return config;
     },
-
 };
 
 export default config;

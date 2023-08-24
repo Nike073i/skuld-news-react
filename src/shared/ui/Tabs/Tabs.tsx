@@ -16,20 +16,24 @@ interface TabsProps<T extends string> {
 }
 
 export const Tabs = <T extends string>(props: TabsProps<T>) => {
-    const {
-        className,
-        tabs,
-        value,
-        onTabClick,
-    } = props;
-    const onTabClickHandle = useCallback((tab: TabItem<T>) => () => { onTabClick?.(tab); }, [onTabClick]);
+    const { className, tabs, value, onTabClick } = props;
+    const onTabClickHandle = useCallback(
+        (tab: TabItem<T>) => () => {
+            onTabClick?.(tab);
+        },
+        [onTabClick],
+    );
 
     const mods = {};
     return (
         <div className={classNames(cls.tabs, mods, [className])}>
             {tabs.map((tab) => (
                 <Card
-                    theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
+                    theme={
+                        tab.value === value
+                            ? CardTheme.NORMAL
+                            : CardTheme.OUTLINED
+                    }
                     className={cls.tab}
                     key={tab.value}
                     onClick={onTabClickHandle(tab)}

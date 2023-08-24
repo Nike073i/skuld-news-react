@@ -8,14 +8,15 @@ export const updateProfile = (firstname: string, lastname: string) => {
     cy.getByTestId('EditableProfileCardHeader.SaveButton').click();
 };
 
-export const resetProfile = (profileId: string) => cy.request({
-    method: 'PUT',
-    url: getProfileRoute(profileId),
-    headers: {
-        Authorization: 'token',
-    },
-    body: defaultProfileData,
-});
+export const resetProfile = (profileId: string) =>
+    cy.request({
+        method: 'PUT',
+        url: getProfileRoute(profileId),
+        headers: {
+            Authorization: 'token',
+        },
+        body: defaultProfileData,
+    });
 
 declare global {
     namespace Cypress {

@@ -5,7 +5,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 
 interface UseThemeResult {
     toggleTheme: () => void;
-    theme: Theme
+    theme: Theme;
 }
 
 export function useTheme(): UseThemeResult {

@@ -9,7 +9,9 @@ import App from '@/app/App';
 
 const container = document.getElementById('root');
 if (!container) {
-    throw new Error('Контейнер root не найден. Вмонтировать реакт-приложение не удалось');
+    throw new Error(
+        'Контейнер root не найден. Вмонтировать реакт-приложение не удалось',
+    );
 }
 const root = createRoot(container);
 

@@ -11,6 +11,7 @@
     "start:vite": "vite",
     "start:dev:vite": "concurrently \"npm run start:vite\" \"npm run start:devback\"",
     "start:devback": "node ./json-server/index.js",
+    "prettier": "npx prettier --write **/*.{ts,tsx,json}",
     "lint:ts": "npx eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "npx eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
@@ -70,6 +71,7 @@
     "cypress": "^12.17.4",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-i18next": "^5.2.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
@@ -89,6 +91,7 @@
     "json-server": "^0.17.3",
     "lint-staged": "^14.0.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "prettier": "^3.0.2",
     "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.63.6",
@@ -142,7 +145,10 @@
     }
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint",
+    "**/*.{ts,tsx}": [
+      "prettier --list-different",
+      "eslint"
+    ],
     "**/*.scss": "stylelint"
   }
 }

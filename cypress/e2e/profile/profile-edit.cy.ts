@@ -15,12 +15,24 @@ describe('Страница профиля пользователя', () => {
     });
     it('Профиль успешно загружается', () => {
         cy.getByTestId('ProfilePage').should('exist');
-        cy.getByTestId('ProfileCard.FirstName').should('have.value', testUserData.firstname);
-        cy.getByTestId('ProfileCard.LastName').should('have.value', testUserData.lastname);
+        cy.getByTestId('ProfileCard.FirstName').should(
+            'have.value',
+            testUserData.firstname,
+        );
+        cy.getByTestId('ProfileCard.LastName').should(
+            'have.value',
+            testUserData.lastname,
+        );
     });
     it('Редактируем пользователя', () => {
         cy.updateProfile(newProfileData.firstname, newProfileData.lastname);
-        cy.getByTestId('ProfileCard.FirstName').should('have.value', newProfileData.firstname);
-        cy.getByTestId('ProfileCard.LastName').should('have.value', newProfileData.lastname);
+        cy.getByTestId('ProfileCard.FirstName').should(
+            'have.value',
+            newProfileData.firstname,
+        );
+        cy.getByTestId('ProfileCard.LastName').should(
+            'have.value',
+            newProfileData.lastname,
+        );
     });
 });

@@ -1,6 +1,4 @@
-import {
-    Fragment, ReactNode, memo, useMemo,
-} from 'react';
+import { Fragment, ReactNode, memo, useMemo } from 'react';
 import { Listbox as HuListBox } from '@headlessui/react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
@@ -39,31 +37,39 @@ export const ListBox = memo((props: ListBoxProps) => {
         readOnly,
     } = props;
     const optionsClasses = [mapDirectionClass[direction]];
-    const options = useMemo(() => items?.map((item) => (
-        <HuListBox.Option
-            key={item.value}
-            value={item.value}
-            disabled={item.disabled}
-            as={Fragment}
-        >
-            {({ active }) => {
-                const mods: Mods = {
-                    [popupCls.active]: active,
-                    [popupCls.disabled]: item.disabled,
-                };
-                return (
-                    <li
-                        className={classNames(cls.item, mods)}
-                    >
-                        {item.content}
-                    </li>
-                );
-            }}
-        </HuListBox.Option>
-    )), [items]);
+    const options = useMemo(
+        () =>
+            items?.map((item) => (
+                <HuListBox.Option
+                    key={item.value}
+                    value={item.value}
+                    disabled={item.disabled}
+                    as={Fragment}
+                >
+                    {({ active }) => {
+                        const mods: Mods = {
+                            [popupCls.active]: active,
+                            [popupCls.disabled]: item.disabled,
+                        };
+                        return (
+                            <li className={classNames(cls.item, mods)}>
+                                {item.content}
+                            </li>
+                        );
+                    }}
+                </HuListBox.Option>
+            )),
+        [items],
+    );
     return (
         <HStack gap="4">
-            {label && <span className={classNames('', { [popupCls.disabled]: readOnly })}>{`${label}>`}</span>}
+            {label && (
+                <span
+                    className={classNames('', {
+                        [popupCls.disabled]: readOnly,
+                    })}
+                >{`${label}>`}</span>
+            )}
             <HuListBox
                 disabled={readOnly}
                 as="div"
@@ -72,11 +78,13 @@ export const ListBox = memo((props: ListBoxProps) => {
                 onChange={onChange}
             >
                 <HuListBox.Button className={popupCls.trigger}>
-                    <Button disabled={readOnly}>
-                        {value ?? defaultValue}
-                    </Button>
+                    <Button disabled={readOnly}>{value ?? defaultValue}</Button>
                 </HuListBox.Button>
-                <HuListBox.Options className={classNames(cls.options, {}, optionsClasses)}>{options}</HuListBox.Options>
+                <HuListBox.Options
+                    className={classNames(cls.options, {}, optionsClasses)}
+                >
+                    {options}
+                </HuListBox.Options>
             </HuListBox>
         </HStack>
     );

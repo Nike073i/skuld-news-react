@@ -87,6 +87,7 @@ module.exports = {
             },
         ],
         'unused-imports/no-unused-imports': 'error',
+        'react/no-unstable-nested-components': 'warn',
     },
     globals: {
         __IS_DEV__: true,

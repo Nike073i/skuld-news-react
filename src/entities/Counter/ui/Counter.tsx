@@ -4,6 +4,7 @@ import { useCounterValue } from '../model/selectors/getCounterValue/getCounterVa
 
 export const Counter = () => {
     const counterValue = useCounterValue();
+    // @ts-ignore
     const { decrement, increment } = useCounterActions();
 
     const handleInc = () => increment();

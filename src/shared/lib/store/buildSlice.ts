@@ -1,7 +1,7 @@
-import { CreateSliceOptions, SliceCaseReducers } from '@reduxjs/toolkit/dist';
-import { createSlice } from '@reduxjs/toolkit';
-import { useMemo } from 'react';
+import { bindActionCreators, createSlice } from '@reduxjs/toolkit';
+import { SliceCaseReducers, CreateSliceOptions } from '@reduxjs/toolkit/dist';
 import { useDispatch } from 'react-redux';
+import { useMemo } from 'react';
 
 export function buildSlice<
     State,
@@ -13,6 +13,7 @@ export function buildSlice<
         const dispatch = useDispatch();
         // @ts-ignore
         return useMemo(
+            // @ts-ignore
             () => bindActionCreators(slice.actions, dispatch),
             [dispatch],
         );

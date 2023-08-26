@@ -21,5 +21,7 @@
     "Recommendations": "Recommendations",
     "Edit": "Edit",
     "RateTheArticle": "Rate the article",
-    "RateFeedback": "Leave your feedback about the article, it will help improve the quality"
+    "RateFeedback": "Leave your feedback about the article, it will help improve the quality",
+    "ArticlePageGreetingTitle": "Welcome to articles page",
+    "ArticlePageGreetingText": "Here you can search and view articles on various topics"
 }

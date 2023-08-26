@@ -3,7 +3,7 @@ import { JsonSettings } from '../types/jsonSettings';
 import { getUserAuthData } from '../selectors/getUserAuthData/getUserAuthData';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { getJsonSettings } from '../selectors/jsonSettings/getJsonSettings';
-import { setJsonSettingsMuttation } from '../../api/userApi';
+import { setJsonSettingsMutation } from '../../api/userApi';
 
 export const saveJsonSettings = createAsyncThunk<
     JsonSettings,
@@ -18,7 +18,7 @@ export const saveJsonSettings = createAsyncThunk<
     const currentSettings = getJsonSettings(getState());
     try {
         const response = await dispatch(
-            setJsonSettingsMuttation({
+            setJsonSettingsMutation({
                 userId: userData.id,
                 jsonSettings: {
                     ...currentSettings,

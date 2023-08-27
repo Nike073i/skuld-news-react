@@ -529,12 +529,14 @@
             "roles": ["ADMIN"],
             "features": {
                 "isArticleRatingEnabled": true,
-                "isCounterEnabled": true
+                "isCounterEnabled": true,
+                "isAppRedesigned": true
             },
             "jsonSettings": {
                 "theme": "app_dark_theme",
                 "isFirstVisit": true,
-                "settingsPageHasBeenOpen": false
+                "settingsPageHasBeenOpen": false,
+                "isArticlesPageWasOpened": true
             },
             "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
         },
@@ -547,7 +549,11 @@
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": false
             },
-            "avatar": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg"
+            "avatar": "https://klike.net/uploads/posts/2019-03/1551511801_1.jpg",
+            "jsonSettings": {
+                "theme": "app_light_theme",
+                "isArticlesPageWasOpened": true
+            }
         },
         {
             "id": "3",

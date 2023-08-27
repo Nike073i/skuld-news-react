@@ -7,6 +7,8 @@ import { AppRouter } from './providers/router';
 import { Sidebar } from '@/widgets/Sidebar';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 
 function App() {
     const dispatch = useAppDispatch();
@@ -18,15 +20,31 @@ function App() {
         return <PageLoader />;
     }
     return (
-        <div id="app" className={classNames('app')}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {inited && <AppRouter />}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            off={
+                <div id="app" className={classNames('app')}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            <AppRouter />
+                        </div>
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            on={
+                <div id="app" className={classNames('app_redesigned')}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            content={<AppRouter />}
+                            sidebar={<Sidebar />}
+                        />
+                    </Suspense>
+                </div>
+            }
+        />
     );
 }
 

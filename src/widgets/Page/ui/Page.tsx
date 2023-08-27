@@ -18,6 +18,7 @@ import { getPageScrollByPath } from '../ScrollSave/model/selectors/getPageScroll
 import { pageScrollActions } from '../ScrollSave/model/slices/pageScrollSlice';
 import cls from './Page.module.scss';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends PropsWithChildren, TestProps {
     className?: string;
@@ -60,10 +61,17 @@ export const Page: FC<PropsWithChildren<PageProps>> = (
             }),
         );
     }, 500);
+
+    const pageWrapper = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => cls.pageWrapperRedesigned,
+        off: () => cls.pageWrapper,
+    });
+
     return (
         <main
             ref={containerRef}
-            className={classNames(cls.pageWrapper, mods, [className])}
+            className={classNames(pageWrapper, mods, [className])}
             onScroll={onScroll}
             id={PAGE_ID}
             data-testid={dateTestId}

@@ -3,12 +3,6 @@
 @import "themes/dark";
 @import "themes/normal";
 
-body {
-    font: var(--font-m);
-    color: var(--primary-color);
-    background: var(--bg-color);
-}
-
 a {
     text-decoration: none;
 }
@@ -18,6 +12,16 @@ li {
 }
 
 .app {
+    font: var(--font-m);
+    color: var(--primary-color);
+    background: var(--bg-color);
+    min-height: 100vh;
+}
+
+.app_redesigned {
+    font: var(--font-m-redesigned);
+    color: var(--text-redesigned);
+    background: var(--bg-redesigned);
     min-height: 100vh;
 }
 

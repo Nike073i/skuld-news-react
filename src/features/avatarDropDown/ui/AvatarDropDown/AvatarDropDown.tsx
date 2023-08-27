@@ -2,8 +2,8 @@ import { memo, useCallback } from 'react';
 import { t } from 'i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DropDown } from '@/shared/ui/Popups';
-import { Avatar } from '@/shared/ui/Avatar';
+import { DropDown } from '@/shared/ui/deprecated/Popups';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import {
     getUserAuthData,
     isUserAdmin,

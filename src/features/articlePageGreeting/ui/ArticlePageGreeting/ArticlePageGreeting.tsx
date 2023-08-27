@@ -3,9 +3,9 @@ import { memo, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { saveJsonSettings, useJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text } from '@/shared/ui/Text';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Modal } from '@/shared/ui/Modal';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
+import { Modal } from '@/shared/ui/deprecated/Modal';
 
 export const ArticlePageGreeting = memo(() => {
     const { t } = useTranslation('article');

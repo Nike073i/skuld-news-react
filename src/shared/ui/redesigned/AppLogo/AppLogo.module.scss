@@ -4,6 +4,7 @@
 
 .gradientBig,
 .gradientSmall {
+    pointer-events: none;
     position: absolute;
     border-radius: 50%;
     opacity: 0.6;

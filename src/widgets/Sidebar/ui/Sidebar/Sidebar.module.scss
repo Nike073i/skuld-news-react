@@ -4,45 +4,86 @@
     background: var(--inverted-bg-color);
     position: relative;
     transition: width 0.3s;
+
+    .switchers {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .lang {
+        margin-left: 20px;
+    }
+    
+    .collapsedBtn {
+        position: absolute;
+        right: -32px;
+        bottom: 32px;
+        z-index: 5;
+    }
+    
+    .items {
+        margin-top: 20px;
+        margin-left: 30px;
+    }
 }
 
 .sidebarRedesigned {
+    position: relative;
     background: var(--light-bg-redesigned);
     width: 220px;
     height: 100%;
     border-radius: 32px;
-}
 
-.appLogo {
-    padding-top: 20px;
-}
+    .items {
+        margin-top: 40px;
+    }
 
-.switchers {
-    position: absolute;
-    bottom: 20px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+    .collapsedBtn {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 10;
+        transform: rotate(90deg);
+    }
 
-.lang {
-    margin-left: 20px;
-}
-
-.collapsedBtn {
-    position: absolute;
-    right: -32px;
-    bottom: 32px;
-    z-index: 5;
-}
-
-.items {
-    margin-top: 20px;
-    margin-left: 30px;
+    .switchers {
+        position: absolute;
+        bottom: 40px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 16px;
+    }
 }
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
+
+    .switchers {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lang {
+        margin-left: 0;
+    }
+}
+
+.collapsedRedesigned {
+    width: 50px;
+
+    .collapsedBtn {
+        transform: rotate(-90deg);
+    }
+
+    .items {
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+    }
 
     .switchers {
         align-items: center;

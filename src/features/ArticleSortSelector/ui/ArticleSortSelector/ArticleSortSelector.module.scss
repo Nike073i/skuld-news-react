@@ -1,8 +1,14 @@
 .articleSortSelector {
     display: flex;
     align-items: center;
+
+    .order {
+        margin-left: 8;
+    }
+    
 }
 
-.order {
-    margin-left: 8;
+.articleSortSelectorRedesigned {
+    display: flex;
+    align-items: center;
 }

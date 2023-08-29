@@ -44,7 +44,11 @@ export const Page: FC<PropsWithChildren<PageProps>> = (
     const mods = {};
 
     useInfiniteScroll({
-        containerRef,
+        containerRef: toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => undefined,
+            off: () => containerRef,
+        }),
         triggerRef,
         callback: onScrollEnd,
     });

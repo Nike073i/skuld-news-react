@@ -5,7 +5,7 @@ import { DropDownDirection } from '@/shared/types/ui';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
 import { Button } from '../../../Button/Button';
-import { HStack } from '../../../../redesigned/Stack';
+import { HStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
 
 export interface ListBoxItem {
@@ -25,10 +25,6 @@ interface ListBoxProps {
     label?: string;
 }
 
-/**
- * Устарел, используем новые компоненты из redesigned
- * @deprecated
- */
 export const ListBox = memo((props: ListBoxProps) => {
     const {
         className,
@@ -40,7 +36,7 @@ export const ListBox = memo((props: ListBoxProps) => {
         label,
         readOnly,
     } = props;
-    const optionsClasses = [mapDirectionClass[direction]];
+    const optionsClasses = [mapDirectionClass[direction], popupCls.panel];
     const options = useMemo(
         () =>
             items?.map((item) => (

@@ -1,0 +1,31 @@
+.card {
+    padding: 24px;
+    border-radius: 12px;
+}
+
+.withoutPaddings {
+    padding: 0;
+}
+
+.normal {
+    background: var(--dark-bg-redesigned);
+}
+
+.outlined {
+    border: 1px solid var(--accent-redesigned);
+}
+
+.light {
+    background: var(--light-bg-redesigned);
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+@each $indent in (0, 8, 16, 24) {
+    .gap_#{$indent} {
+        padding: #{$indent}px;
+    }
+}
+

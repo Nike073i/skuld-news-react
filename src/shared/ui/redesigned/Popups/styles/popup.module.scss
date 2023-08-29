@@ -1,0 +1,35 @@
+.popup {
+    position: relative;
+}
+
+.panel {
+    border-radius: 18px;
+    border: 1px solid var(--accent-redesigned);
+}
+
+.trigger {
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.active {
+    background: var(--light-bg-redesigned);
+}
+
+.disabled {
+    opacity: 0.7;
+}
+
+@each $name, $p1, $p2 in (BottomLeft, top, right),
+    (BottomRight, top, left),
+    (TopRight, bottom, left),
+    (TopLeft, bottom, right) {
+    .options#{$name} {
+        #{$p1}: 100%;
+        #{$p2}: 0;
+    }
+}

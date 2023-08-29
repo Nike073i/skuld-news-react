@@ -9,7 +9,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader';
-import { HStack } from '@/shared/ui/deprecated/Stack';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import cls from './AddCommentForm.module.scss';
 import { getAddCommentText } from '../../model/selectors/getAddCommentText/getAddCommentText';
 import {

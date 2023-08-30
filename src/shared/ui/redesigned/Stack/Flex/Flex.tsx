@@ -4,6 +4,7 @@ import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between' | 'around';
 export type FlexAlign = 'start' | 'center' | 'end';
+export type FlexWrap = 'nowrap' | 'wrap';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '24' | '32';
 
@@ -18,6 +19,7 @@ export interface FlexProps extends DivProps {
     justify?: FlexJustify;
     align?: FlexAlign;
     direction?: FlexDirection;
+    wrap?: FlexWrap;
     gap?: FlexGap;
     max?: boolean;
 }
@@ -59,6 +61,7 @@ export const Flex = (props: FlexProps) => {
         gap,
         max,
         role,
+        wrap = 'nowrap',
         ...otherProps
     } = props;
     const classes = [
@@ -66,6 +69,7 @@ export const Flex = (props: FlexProps) => {
         alignClasses[align],
         justifyClasses[justify],
         directionClasses[direction],
+        cls[wrap],
         gap && gapClasses[gap],
     ];
     const mods: Mods = {

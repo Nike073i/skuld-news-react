@@ -28,9 +28,20 @@ export const ArticleListItemSkeleton = memo(
             off: () => CardDeprecated,
         });
 
+        const mainClass = toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.articleListItemRedesigned,
+            off: () => cls.articleListItem,
+        });
+
         if (view === ArticleView.LIST) {
             return (
-                <div className={classNames('', mods, [className, cls[view]])}>
+                <div
+                    className={classNames(mainClass, mods, [
+                        className,
+                        cls[view],
+                    ])}
+                >
                     <Card className={cls.card}>
                         <div className={cls.header}>
                             <Skeleton border="50%" height={30} width={30} />
@@ -59,24 +70,22 @@ export const ArticleListItemSkeleton = memo(
             );
         }
         return (
-            <div className={classNames('', mods, [className, cls[view]])}>
-                <CardDeprecated className={cls.card}>
+            <div
+                className={classNames(mainClass, mods, [className, cls[view]])}
+            >
+                <Card className={cls.card}>
                     <div className={cls.imageWrapper}>
-                        <SkeletonDeprecated
+                        <Skeleton
                             width={200}
                             height={200}
                             className={cls.image}
                         />
                     </div>
                     <div className={cls.infoWrapper}>
-                        <SkeletonDeprecated width={130} height={16} />
+                        <Skeleton width={130} height={16} />
                     </div>
-                    <SkeletonDeprecated
-                        width={150}
-                        height={16}
-                        className={cls.title}
-                    />
-                </CardDeprecated>
+                    <Skeleton width={150} height={16} className={cls.title} />
+                </Card>
             </div>
         );
     },

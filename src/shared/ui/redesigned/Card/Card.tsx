@@ -30,7 +30,7 @@ export const Card: React.FC<PropsWithChildren<CardProps>> = (
         variant = 'normal',
         fullWidth,
         padding = '8',
-        border = 'normal',
+        border = 'standart',
         ...otherProps
     } = props;
     const mods = {

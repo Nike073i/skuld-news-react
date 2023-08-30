@@ -17,7 +17,6 @@
     border-radius: 48px;
     padding: 8px 16px;
     border: 1px solid var(--icon-redesigned);
-    height: 38px;
     width: 100%;
 }
 
@@ -43,4 +42,10 @@
 
 .readOnly {
     opacity: 0.7;
+}
+
+@each $input_size, $height in (s: 32, m: 38, l: 44) {
+    .#{$input_size} {
+        height: #{$height}px;
+    }
 }

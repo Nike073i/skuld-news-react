@@ -34,7 +34,7 @@
     }
 }
 
-@each $indent in (4, 8, 16, 32) {
+@each $indent in (4, 8, 24, 16, 32) {
     .gap#{$indent} {
         gap: #{$indent}px;
     }

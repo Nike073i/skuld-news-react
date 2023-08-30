@@ -23,5 +23,8 @@
     "RateTheArticle": "Rate the article",
     "RateFeedback": "Leave your feedback about the article, it will help improve the quality",
     "ArticlePageGreetingTitle": "Welcome to articles page",
-    "ArticlePageGreetingText": "Here you can search and view articles on various topics"
+    "ArticlePageGreetingText": "Here you can search and view articles on various topics",
+    "{{count}}Views_zero": "{{count}} views",
+    "{{count}}Views_one": "{{count}} view",
+    "{{count}}Views_other": "{{count}} views"
 }

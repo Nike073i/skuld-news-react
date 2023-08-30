@@ -16,6 +16,9 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { ArticleRating } from '@/features/articleRating';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/deprecated/Card';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -36,23 +39,51 @@ const ArticleDetailsPage = memo((props: ArticleDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page
-                className={classNames(cls.articleDetailsPage, mods, [
-                    className,
-                ])}
-            >
-                <VStack gap="16" max>
-                    <ArticelDetailsPageHeader />
-                    <ArticleDetails articleId={articleId} />
-                    <ToggleFeatures
-                        feature="isArticleRatingEnabled"
-                        on={<ArticleRating articleId={articleId} />}
-                        off={<Card>*****</Card>}
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                off={
+                    <Page
+                        className={classNames(cls.articleDetailsPage, mods, [
+                            className,
+                        ])}
+                    >
+                        <VStack gap="16" max>
+                            <ArticelDetailsPageHeader />
+                            <ArticleDetails articleId={articleId} />
+                            <ToggleFeatures
+                                feature="isArticleRatingEnabled"
+                                on={<ArticleRating articleId={articleId} />}
+                                off={<Card>*****</Card>}
+                            />
+                            <ArticleRecommendationsList />
+                            <ArticleDetailsComments articleId={articleId} />
+                        </VStack>
+                    </Page>
+                }
+                on={
+                    <StickyContentLayout
+                        content={
+                            <Page
+                                className={classNames(
+                                    cls.articleDetailsPage,
+                                    mods,
+                                    [className],
+                                )}
+                            >
+                                <VStack gap="16" max>
+                                    <DetailsContainer articleId={articleId} />
+                                    <ArticleRating articleId={articleId} />
+                                    <ArticleRecommendationsList />
+                                    <ArticleDetailsComments
+                                        articleId={articleId}
+                                    />
+                                </VStack>
+                            </Page>
+                        }
+                        right={<AdditionalInfoContainer />}
                     />
-                    <ArticleRecommendationsList />
-                    <ArticleDetailsComments articleId={articleId} />
-                </VStack>
-            </Page>
+                }
+            />
         </DynamicModuleLoader>
     );
 });

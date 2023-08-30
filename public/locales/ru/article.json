@@ -23,5 +23,9 @@
     "RateTheArticle": "Оцените статью",
     "RateFeedback": "Оставьте свой отзыв о статье, это поможет улучшить качество",
     "ArticlePageGreetingTitle": "Добро пожаловать на страницу статей",
-    "ArticlePageGreetingText": "Здесь вы можете искать и просматривать статьи на различные темы."
+    "ArticlePageGreetingText": "Здесь вы можете искать и просматривать статьи на различные темы.",
+    "{{count}}Views_zero": "{{count}} просмотров",
+    "{{count}}Views_one": "{{count}} просмотров",
+    "{{count}}Views_few": "{{count}} просмотра",
+    "{{count}}Views_many": "{{count}} просмотров"
 }

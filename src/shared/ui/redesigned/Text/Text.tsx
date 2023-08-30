@@ -23,6 +23,7 @@ interface TextProps {
     variant?: TextVariant;
     align?: TextAlign;
     size?: TextSize;
+    bold?: boolean;
     'data-testid'?: string;
 }
 
@@ -34,9 +35,12 @@ export const Text = memo((props: TextProps) => {
         variant = 'primary',
         align = 'left',
         size = 'size_m',
+        bold,
         'data-testid': dataTestId = 'Text',
     } = props;
-    const mods = {};
+    const mods = {
+        [cls.bold]: bold,
+    };
     const HeaderTag = sizeToHeaderTag[size];
     return (
         <div

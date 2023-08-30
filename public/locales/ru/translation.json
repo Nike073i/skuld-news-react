@@ -26,5 +26,10 @@
     "YourFeedback": "Ваш отзыв",
     "Close": "Закрыть",
     "Send": "Отправить",
-    "YourRate": "Ваша оценка:"
+    "YourRate": "Ваша оценка:",
+    "UserSettings": "Пользовательские настройки",
+    "NewDesign": "Новый дизайн",
+    "OldDesign": "Старый дизайн",
+    "Design": "Дизайн",
+    "SettingsLink": "Настройки"
 }

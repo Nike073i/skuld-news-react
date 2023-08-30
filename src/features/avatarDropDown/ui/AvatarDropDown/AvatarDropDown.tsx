@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react';
-import { t } from 'i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDown as DropDownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
@@ -10,7 +10,11 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User';
-import { getRouteAdmin, getRouteProfile } from '@/shared/consts/router';
+import {
+    getRouteAdmin,
+    getRouteProfile,
+    getRouteSettings,
+} from '@/shared/consts/router';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { DropDown } from '@/shared/ui/redesigned/Popups';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -25,6 +29,7 @@ export const AvatarDropDown = memo((props: AvatarDropDownProps) => {
     const isAdmin = useSelector(isUserAdmin);
     const isManager = useSelector(isUserManager);
     const authData = useSelector(getUserAuthData);
+    const { t } = useTranslation();
 
     const dispatch = useDispatch();
     const onLogout = useCallback(() => {
@@ -48,6 +53,10 @@ export const AvatarDropDown = memo((props: AvatarDropDownProps) => {
         {
             content: t('ProfileLink'),
             href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('SettingsLink'),
+            href: getRouteSettings(),
         },
         {
             content: t('LogOut'),

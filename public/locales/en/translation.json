@@ -26,5 +26,10 @@
     "YourFeedback": "Your feedback",
     "Close": "Close",
     "Send": "Send",
-    "YourRate": "Your rate:"
+    "YourRate": "Your rate:",
+    "UserSettings": "User settings",
+    "NewDesign": "New design",
+    "OldDesign": "Old design",
+    "Design": "Design",
+    "SettingsLink": "Settings"
 }

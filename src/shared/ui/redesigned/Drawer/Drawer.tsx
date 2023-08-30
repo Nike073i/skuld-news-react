@@ -7,6 +7,7 @@ import {
 import cls from './Drawer.module.scss';
 import { Portal } from '../../redesigned/Portal/Portal';
 import { Overlay } from '../../redesigned/Overlay/Overlay';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface DrawerProps {
     className?: string;
@@ -78,7 +79,16 @@ const DrawerContent = memo((props: DrawerProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.drawer, {}, [className])}>
+            <div
+                className={classNames(cls.drawer, {}, [
+                    className,
+                    toggleFeatures({
+                        name: 'isAppRedesigned',
+                        off: () => cls.drawerOld,
+                        on: () => cls.drawerNew,
+                    }),
+                ])}
+            >
                 <Overlay onClick={close} />
                 <Spring.a.div
                     className={cls.sheet}
@@ -104,10 +114,6 @@ const DrawerAsync = (props: DrawerProps) => {
     return <DrawerContent {...props} />;
 };
 
-/**
- * Устарел, используем новые компоненты из redesigned
- * @deprecated
- */
 export const Drawer = (props: DrawerProps) => (
     <AnimationProvider>
         <DrawerAsync {...props} />

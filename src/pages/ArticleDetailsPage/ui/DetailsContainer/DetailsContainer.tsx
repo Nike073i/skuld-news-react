@@ -10,7 +10,7 @@ interface DetailsContainerProps {
 export const DetailsContainer = memo((props: DetailsContainerProps) => {
     const { className, articleId } = props;
     return (
-        <Card fullWidth className={className} padding="24" border="round">
+        <Card fullWidth className={className} padding="24" border="partial">
             <ArticleDetails articleId={articleId} />
         </Card>
     );

@@ -38,15 +38,18 @@
 
 .outline {
     background: none;
-    border: 2px solid var(--icon-redesigned);
     border-radius: 34px;
 
-    &:hover {
-        border: 2px solid var(--accent-redesigned);
+    &.normal {
+        border: 2px solid var(--icon-redesigned);
+    }
 
-        .addonLeft svg, .addonRight svg {
-            color: var(--accent-redesigned);
-        }
+    &.danger {
+        border: 2px solid var(--cancel-redesigned);
+    }
+
+    &.success {
+        border: 2px solid var(--save-redesigned);
     }
 }
 

@@ -221,7 +221,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                     data-testid="RatingCard"
                     className={className}
                     fullWidth
-                    border="round"
+                    border="partial"
                     padding="24"
                 >
                     {content}

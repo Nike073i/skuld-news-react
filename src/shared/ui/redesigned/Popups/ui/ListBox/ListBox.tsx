@@ -4,7 +4,7 @@ import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '@/shared/types/ui';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './ListBox.module.scss';
-import { Button } from '../../../Button/Button';
+import { Button as ButtonComponent } from '../../../Button/Button';
 import { HStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
 import { Icon } from '../../../Icon';
@@ -84,14 +84,15 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
                 value={value}
                 onChange={onChange}
             >
-                <HuListBox.Button className={popupCls.trigger}>
-                    <Button
-                        variant="filled"
-                        disabled={readOnly}
-                        addonRight={<Icon Svg={ArrowIcon} />}
-                    >
-                        {selectedItem?.content ?? defaultValue}
-                    </Button>
+                <HuListBox.Button
+                    as={ButtonComponent}
+                    className={popupCls.trigger}
+                    variant="filled"
+                    // @ts-ignore
+                    disabled={readOnly}
+                    addonRight={<Icon Svg={ArrowIcon} />}
+                >
+                    {selectedItem?.content ?? defaultValue}
                 </HuListBox.Button>
                 <HuListBox.Options
                     className={classNames(cls.options, {}, optionsClasses)}

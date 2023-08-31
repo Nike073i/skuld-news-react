@@ -34,12 +34,6 @@
     text-align: center;
 }
 
-.bold {
-    .title, text {
-        font-weight: 700;
-    }
-}
-
 @each $text_size, $title_size in (s: m, m: l, l: xl) {
     .size_#{$text_size} {
         .text {
@@ -49,5 +43,11 @@
         .title {
             font: var(--font-#{$title_size}-redesigned)
         }
+    }
+}
+
+.bold {
+    .title, .text {
+        font-weight: 700;
     }
 }

@@ -14,6 +14,7 @@ import {
     TextTheme,
 } from '@/shared/ui/deprecated/Text';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
@@ -26,10 +27,9 @@ import { getArticleDetailsIsLoading } from '../../model/selectors/getArticleDeta
 import { getArticleDetailsData } from '../../model/selectors/getArticleDetailsData/getArticleDetailsData';
 import { getArticleDetailsError } from '../../model/selectors/getArticleDetailsError/getArticleDetailsError';
 import { renderBlock } from './renderBlock';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -79,7 +79,13 @@ const Redesigned = () => {
             <Text title={data?.title} size="size_l" bold />
             <Text title={data?.subtitle} />
             <AppImage
-                fallback={<Skeleton width="100%" height={420} border="16px" />}
+                fallback={
+                    <SkeletonRedesigned
+                        width="100%"
+                        height={420}
+                        border="16px"
+                    />
+                }
                 src={data?.img}
                 className={cls.image}
             />
@@ -103,36 +109,26 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         }
     }, [articleId, dispatch]);
 
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedesigned',
+        off: () => SkeletonDeprecated,
+        on: () => SkeletonRedesigned,
+    });
+
     let content;
     if (isLoading) {
         content = (
             <>
-                <SkeletonDeprecated
+                <Skeleton
                     className={cls.avatar}
                     width={200}
                     height={200}
                     border="50%"
                 />
-                <SkeletonDeprecated
-                    className={cls.title}
-                    width={300}
-                    height={32}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width={600}
-                    height={24}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width="100%"
-                    height={200}
-                />
-                <SkeletonDeprecated
-                    className={cls.skeleton}
-                    width="100%"
-                    height={200}
-                />
+                <Skeleton className={cls.title} width={300} height={32} />
+                <Skeleton className={cls.skeleton} width={600} height={24} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
+                <Skeleton className={cls.skeleton} width="100%" height={200} />
             </>
         );
     } else if (error) {

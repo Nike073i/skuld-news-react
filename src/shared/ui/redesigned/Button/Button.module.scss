@@ -11,7 +11,7 @@
     align-items: center;
     cursor: pointer;
     color: var(--text-redesigned);
-    padding: 8px 15px;
+    padding: 6px 16px;
 
     &:hover {
         color: var(--accent-redesigned);
@@ -38,11 +38,11 @@
 
 .outline {
     background: none;
-    border: 1px solid var(--icon-redesigned);
+    border: 2px solid var(--icon-redesigned);
     border-radius: 34px;
 
     &:hover {
-        border: 1px solid var(--accent-redesigned);
+        border: 2px solid var(--accent-redesigned);
 
         .addonLeft svg, .addonRight svg {
             color: var(--accent-redesigned);

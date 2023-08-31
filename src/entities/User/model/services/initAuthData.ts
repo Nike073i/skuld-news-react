@@ -23,9 +23,7 @@ export const initAuthData = createAsyncThunk<User, void, ThunkConfig<string>>(
             ).unwrap();
             localStorage.setItem(
                 LOCAL_STORAGE_LAST_DESIGN_KEY,
-                JSON.stringify(
-                    response.features?.isAppRedesigned ? 'new' : 'old',
-                ),
+                response.features?.isAppRedesigned ? 'new' : 'old',
             );
             return response;
         } catch (e) {

@@ -26,9 +26,7 @@ export const userSlice = createSlice({
             );
             localStorage.setItem(
                 LOCAL_STORAGE_LAST_DESIGN_KEY,
-                JSON.stringify(
-                    payload.features?.isAppRedesigned ? 'new' : 'old',
-                ),
+                payload.features?.isAppRedesigned ? 'new' : 'old',
             );
         },
         logout: (state) => {

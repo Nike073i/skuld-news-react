@@ -3,9 +3,7 @@ import { FeatureFlags } from '@/shared/types/featureFlags';
 
 const defaultFeatures: FeatureFlags = {
     isAppRedesigned:
-        JSON.parse(
-            localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) ?? '',
-        ) === 'new',
+        localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === 'new',
 };
 let featureFlags: FeatureFlags = {
     ...defaultFeatures,
